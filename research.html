@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Research – Null Labs</title>
+  <meta name="description" content="Null Labs — Research" />
+  <meta name="theme-color" content="#0b0d10" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg-dark:#0b0d10;
+      --bg-gray:#14181e;
+      --panel:#0f1216;
+      --fg:#e6e7e9;
+      --muted:#a4a9b0;
+      --muted-2:#8a9097;
+      --line:rgba(230,231,233,0.12);
+      --accent:#c9cfb0;
+      --maxw:1200px;
+      --pad-left:clamp(0px,1.5vw,12px);
+      --pad-right:clamp(300px,34vw,800px);
+      --col: clamp(480px, 64ch, 760px);
+      --fs-base:16px;
+      --lh:1.6;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      background:var(--bg-dark);
+      color:var(--fg);
+      font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,"Helvetica Neue",Arial,sans-serif;
+      font-size:var(--fs-base);
+      line-height:var(--lh);
+      letter-spacing:.002em;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+
+    a{color:var(--accent);text-decoration:none}
+    a:hover{text-decoration:underline}
+
+    .wrap{max-width:var(--maxw); margin:0 auto; padding-left:var(--pad-left); padding-right:var(--pad-right)}
+
+    header{
+      display:flex;
+      align-items:center;
+      justify-content:flex-start;
+      padding:12px 0;
+    }
+
+    .brand{
+      font-weight:700;
+      font-size:12px;
+      letter-spacing:.24em;
+      display:flex;
+      align-items:center;
+      gap:8px;
+      text-transform:uppercase;
+      color:var(--fg);
+      text-decoration:none; /* No underline normally */
+    }
+    .brand:hover{
+      text-decoration:none; /* No underline on hover */
+    }
+
+    .slashed-zero{
+      font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;
+      font-feature-settings:"zero";
+    }
+
+    /* Replace your existing .research-link hover/active rules with these */
+/* Keep brand + nav in one row; align to your global measure */
+.header-row{
+  display:flex;
+  align-items:baseline;   /* baselines aligned; use 'center' if you prefer visual centering */
+  gap:20px;
+  width:var(--col);       /* matches the right edge of main content/cards */
+}
+
+/* Push the nav (Research) to the right edge of the header row */
+.primary-nav{ margin-left:auto; }
+
+/* Research link: remove fixed margin; enable braces without layout shift */
+.research-link{
+  color:var(--accent);
+  font-size:12px;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  text-decoration:none;
+  margin:0;
+}
+
+/* Reserve brace space so text never moves */
+.research-link::before,
+.research-link::after{
+  display:inline-block;
+  opacity:0;                 /* hidden but still reserving space */
+  transition:opacity 120ms ease;
+}
+.research-link::before{
+  content:"[";
+  margin-right:0.25em;
+}
+.research-link::after{
+  content:"]";
+  margin-left:0.25em;
+}
+
+/* Hover shows braces (no underline) */
+.research-link:hover{ text-decoration:none; }
+.research-link:hover::before,
+.research-link:hover::after{ opacity:1; }
+
+/* Active page keeps braces on:
+   works with either .active OR aria-current="page" */
+.research-link.active::before,
+.research-link.active::after,
+.research-link[aria-current="page"]::before,
+.research-link[aria-current="page"]::after{
+  opacity:1;
+}
+
+/* Brand never underlines */
+.brand{ color:var(--fg); text-decoration:none; }
+.brand:hover{ text-decoration:none; }
+
+/* (Optional) Slightly tame extreme right padding if Chrome feels “pushed right” */
+@media (min-width: 900px){
+  :root{
+    /* Adjust if Chrome still looks too far right on your machine */
+    --pad-right: clamp(260px, 30vw, 720px);
+  }
+}
+
+
+    main{
+      padding:56px 0;
+    }
+
+    h1{
+      font-family:"IBM Plex Serif",ui-serif,Georgia,"Times New Roman",serif;
+      font-size:28px;
+      font-weight:600;
+      margin:0;
+      width:var(--col);
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="header-row">
+      <a href="null_labs.html" class="brand">NULL LABS <span class="slashed-zero">(N0)</span></a>
+      <nav class="primary-nav">
+        <a href="research.html" class="research-link" aria-current="page">Research</a>
+      </nav>
+    </header>
+  </div>
+
+  <main class="wrap">
+    <h1>Coming soon...</h1>
+  </main>
+</body>
+</html>
