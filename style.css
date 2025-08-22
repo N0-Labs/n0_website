@@ -19,7 +19,7 @@
   --accent:#c9cfb0;
 
   /* Layout & type */
-  --maxw:1400px;
+  --maxw:1200px;
 
   /* LEFT-BIASED PADDING FROM index.html */
   --pad-left:clamp(0px,1.5vw,12px);
@@ -27,7 +27,7 @@
 
 
   /* Single content measure: sets the global RIGHT EDGE for all text & cards */
-  --col: clamp(480px, 72ch, 900px);
+  --col: clamp(480px, 60ch, 760px);
 
   --radius:6px;
   --shadow:0 0 0 1px rgba(255,255,255,0.02), 0 8px 24px rgba(0,0,0,0.45);
@@ -43,6 +43,14 @@
   --timeline-width:2px;
   --timeline-dot:9px;
 }
+
+:root {
+  --maxw: 1200px;                   /* was 1400px */
+  --col: clamp(480px, 60ch, 760px); /* was clamp(480px, 72ch, 900px) */
+  --pad-right: clamp(80px, 16vw, 320px); /* was clamp(100px, 20vw, 400px) */
+  --gutter-left: 70px;              /* new: single left gutter */
+}
+
 
 html {
       /* Modern fix */
@@ -102,52 +110,6 @@ section{padding:56px 0}
   font-weight:400;
 }
 
-/* TIMELINE: right edge = --col; clip anything past that boundary */
-.timeline{
-  position:relative;
-  width:calc(var(--line-col) + var(--gap-col) + var(--col));
-  overflow:clip; /* HARD CROP to global right edge */
-}
-.timeline::before{
-  content:"";
-  position:absolute; top:0; bottom:0;
-  left:calc(var(--line-col)/2);
-  width:var(--timeline-width);
-  background:var(--line-strong);
-  border-radius:1px;
-}
-.t-row{
-  display:grid;
-  grid-template-columns:var(--line-col) var(--gap-col) var(--col);
-  align-items:center;          /* centers dot vertically with card */
-  margin-bottom:18px;
-}
-.t-dot{
-  grid-column:2; justify-self:center;
-  width:var(--timeline-dot); height:var(--timeline-dot);
-  background:#c7cbd1; border:1px solid rgba(255,255,255,.3); border-radius:50%;
-  box-shadow:0 0 0 2px rgba(255,255,255,.05);
-}
-.t-card{
-  grid-column:3;
-  background:var(--panel);
-  border:1px solid var(--line-strong);
-  border-radius:var(--radius);
-  padding:18px 20px;
-  box-shadow:var(--shadow);
-  transition:transform .15s ease, box-shadow .15s ease, border-color .15s ease;    /* NEVER exceed shared right edge */
-  width: var(--col);
-  max-width: var(--col);
-}
-.t-card:hover{
-  transform:translateY(-1px);
-  box-shadow:0 0 0 1px rgba(255,255,255,.04), 0 16px 28px rgba(0,0,0,.55);
-  border-color:rgba(230,231,233,.32);
-}
-.t-card h3{margin:0 0 6px; font-size:var(--h3); font-weight:600; letter-spacing:-.003em; font-family:"IBM Plex Serif",ui-serif,Georgia,"Times New Roman",serif}
-.t-card p{margin:0; color:var(--muted); font-size:15px}
-
-.t-card,
 .plain-block,
 .hero-inner {
   width: var(--col);
