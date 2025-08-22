@@ -1,15 +1,12 @@
 /* =========================
-   Null Labs — unified styles (safe merge)
-   Based on index.html inline CSS, plus:
-   - h1 + main padding for Research page
-   - responsive pad-right tweak
+   Null Labs — unified, mobile-first, consistent
    ========================= */
 
-/* ---------- CSS Variables ---------- */
+/* ---------- Variables ---------- */
 :root{
   /* Palette */
-  --bg-dark:#0b0d10;   /* hero + timeline */
-  --bg-gray:#14181e;   /* company + team + contact */
+  --bg-dark:#0b0d10;
+  --bg-gray:#14181e;
   --panel:#0f1216;
   --fg:#e6e7e9;
   --muted:#a4a9b0;
@@ -18,50 +15,30 @@
   --line-strong:rgba(230,231,233,0.22);
   --accent:#c9cfb0;
 
-  /* Layout & type */
-  --maxw:1200px;
+  /* Typography & layout */
+  --fs-base:16px;
+  --lh:1.6;
+  --h3:19px;
 
-  /* LEFT-BIASED PADDING FROM index.html */
-  --pad-left:clamp(0px,1.5vw,12px);
-  --pad-right: clamp(100px,20vw,400px);
-
-
-  /* Single content measure: sets the global RIGHT EDGE for all text & cards */
-  --col: clamp(480px, 60ch, 760px);
-
+  /* Card look */
   --radius:6px;
   --shadow:0 0 0 1px rgba(255,255,255,0.02), 0 8px 24px rgba(0,0,0,0.45);
 
-  --fs-base:16px;
-  --lh:1.6;
-  --lead:18px;
-  --h3:19px;
+  /* Measures (mobile-first) */
+  --maxw: 1200px;
+  --col: 60ch;                 /* readable line length on phones up */
+  --pad-right: 16px;
 
-  /* Timeline columns */
-  --line-col:22px;      /* column holding the vertical line */
-  --gap-col:56px;       /* space between line and card (dot centered here) */
-  --timeline-width:2px;
-  --timeline-dot:9px;
+  /* Safe area (iOS) */
+  --gutter-xs: 16px;
+  --gutter-left-mobile: max(var(--gutter-xs), env(safe-area-inset-left));
+  --gutter-right-mobile: max(var(--gutter-xs), env(safe-area-inset-right));
 }
 
-:root {
-  --maxw: 1200px;                   /* was 1400px */
-  --col: clamp(480px, 60ch, 760px); /* was clamp(480px, 72ch, 900px) */
-  --pad-right: clamp(80px, 16vw, 320px); /* was clamp(100px, 20vw, 400px) */
-  --gutter-left: 70px;              /* new: single left gutter */
-}
-
-
-html {
-      /* Modern fix */
-      scrollbar-gutter: stable;
-      /* Fallback for older setups */
-      overflow-y: scroll;
-    }
-
-/* ---------- Global Resets ---------- */
-*{box-sizing:border-box}
-html,body{height:100%}
+/* ---------- Base ---------- */
+*{ box-sizing:border-box; }
+html,body{ height:100%; }
+html{ scrollbar-gutter: stable; overflow-y: scroll; }
 body{
   margin:0;
   background:var(--bg-dark);
@@ -69,156 +46,123 @@ body{
   font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,"Helvetica Neue",Arial,sans-serif;
   font-size:var(--fs-base);
   line-height:var(--lh);
-  letter-spacing:.002em;
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
-  word-wrap:break-word;
   overflow-x:hidden;
+  letter-spacing:.002em;
 }
+a{ color:var(--accent); text-decoration:none; }
+a:hover{ text-decoration:underline; }
 
-a{color:var(--accent);text-decoration:none}
-a:hover{text-decoration:underline}
-
-/* Full-bleed bands so color transitions align exactly at section boundaries */
+/* ---------- Bands (full-bleed background) ---------- */
 .band{
   position:relative;
-  left:50%;
-  right:50%;
-  margin-left:-50vw;
-  margin-right:-50vw;
+  left:50%; right:50%;
+  margin-left:-50vw; margin-right:-50vw;
   width:100vw;
+  border-top:1px solid var(--line);
 }
-.band--dark{background:var(--bg-dark); border-top:1px solid var(--line);}
-.band--gray{background:var(--bg-gray); border-top:1px solid var(--line);}
+.band--dark{ background:var(--bg-dark); }
+.band--gray{ background:var(--bg-gray); }
 
-.wrap{max-width:var(--maxw); margin:0 auto; padding-left:var(--pad-left); padding-right:var(--pad-right)}
-header{display:flex; align-items:center; justify-content:flex-start; padding:12px 0; }
-.brand{font-weight:700; font-size:12px; letter-spacing:.24em; display:flex; align-items:center; gap:8px; text-transform:uppercase}
-.slashed-zero{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace; font-feature-settings:"zero"}
-
-section{padding:56px 0}
-.hero{padding-top:72px; padding-bottom:40px}
-.hero-canvas{position:absolute; inset:0; width:100%; height:100%; display:block; opacity:.8; pointer-events:none}
-.hero-inner{position:relative; text-align:left; width:var(--col);} /* left-hug, shared right edge */
-.eyebrow{font-variant-caps:all-small-caps; font-size:11px; letter-spacing:.18em; color:var(--muted-2); margin-bottom:10px}
-
-/* Title == paragraph (identical styling) */
-.research-line{
-  margin:0 20px 0 0;
-  font-size:var(--lead);
-  color:var(--muted);
-  font-weight:400;
+/* ---------- Wrap (container) ---------- */
+/* Mobile-first: symmetric, safe-area aware padding; no fixed left margin */
+.wrap{
+  max-width: 100%;
+  margin: 0 auto;
+  padding-left: var(--gutter-left-mobile);
+  padding-right: var(--gutter-right-mobile);
 }
 
-.plain-block,
-.hero-inner {
-  width: var(--col);
-  max-width: var(--col);   /* Hard cap on right edge */
-  margin-left: 0;          /* They start at the same left edge */
-  margin-right: auto;      /* Right edge always lines up */
+/* ---------- Shared “measure” for content width ---------- */
+.measure,
+.header-row,
+.hero-inner,
+.plain-block {
+  width: 100%;
+  max-width: var(--col);
+  margin: 0;
 }
 
-
-/* Company/Team blocks share the same measure so their right edge matches cards/hero */
-.plain-block{
-  width:var(--col);
-  color:var(--muted);
-  margin:0 0 24px 0;
-  text-align:left;
+/* ---------- Header / Brand / Nav ---------- */
+header{ display:flex; align-items:center; justify-content:flex-start; padding:12px 0; }
+.header-row{ display:flex; align-items:baseline; gap:20px; }
+.brand{
+  font-weight:700; font-size:12px; letter-spacing:.24em;
+  display:flex; align-items:center; gap:8px; text-transform:uppercase;
+  color:var(--fg); text-decoration:none;
 }
-.plain-block strong{
-  color:var(--fg);
-  display:block;
-  font-size:19px;
-  margin-bottom:6px;
-  font-weight:600;
-  font-family:"IBM Plex Serif",ui-serif,Georgia,"Times New Roman",serif;
-  letter-spacing:-.003em;
-}
-
-header a.brand {
-  color: var(--fg);
-  text-decoration: none;
-}
-
-/* Keep brand + nav in one row; align to your global measure */
-.header-row{
-  display:flex;
-  align-items:baseline;   /* baselines aligned; use 'center' if you prefer visual centering */
-  gap:20px;
-  width:var(--col);       /* matches the right edge of main content/cards */
-}
-
-/* Push the nav (Research) to the right edge of the header row */
+.brand:hover{ text-decoration:none; }
+.slashed-zero{ font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace; font-feature-settings:"zero"; }
 .primary-nav{ margin-left:auto; }
 
-/* Research link: remove fixed margin; enable braces without layout shift */
+/* Research link with steady braces (no layout shift) */
 .research-link{
-  color:var(--accent);
-  font-size:12px;
-  letter-spacing:.12em;
-  text-transform:uppercase;
-  text-decoration:none;
-  margin:0;
+  color:var(--accent); font-size:12px; letter-spacing:.12em; text-transform:uppercase; text-decoration:none; margin:0;
 }
-
-/* Reserve brace space so text never moves */
-.research-link::before,
-.research-link::after{
-  display:inline-block;
-  opacity:0;                 /* hidden but still reserving space */
-  transition:opacity 120ms ease;
+.research-link::before, .research-link::after{
+  display:inline-block; opacity:0; transition:opacity 120ms ease;
 }
-.research-link::before{
-  content:"[";
-  margin-right:0.25em;
-}
-.research-link::after{
-  content:"]";
-  margin-left:0.25em;
-}
-
-/* Hover shows braces (no underline) */
+.research-link::before{ content:"["; margin-right:.25em; }
+.research-link::after{  content:"]"; margin-left:.25em; }
 .research-link:hover{ text-decoration:none; }
-.research-link:hover::before,
-.research-link:hover::after{ opacity:1; }
-
-/* Active page keeps braces on:
-   works with either .active OR aria-current="page" */
+.research-link:hover::before, .research-link:hover::after{ opacity:1; }
 .research-link.active::before,
 .research-link.active::after,
 .research-link[aria-current="page"]::before,
-.research-link[aria-current="page"]::after{
-  opacity:1;
+.research-link[aria-current="page"]::after{ opacity:1; }
+
+/* ---------- Sections & hero ---------- */
+section{ padding:56px 0; }
+.hero{ padding-top:72px; padding-bottom:40px; }
+.hero-canvas{
+  position:absolute; inset:0; width:100%; height:100%;
+  display:block; opacity:.8; pointer-events:none;
+}
+.hero-inner{ position:relative; text-align:left; }
+.eyebrow{ font-variant-caps:all-small-caps; font-size:11px; letter-spacing:.18em; color:var(--muted-2); margin-bottom:10px; }
+.research-line{ margin:0 20px 0 0; font-size:18px; color:var(--muted); font-weight:400; }
+
+/* ---------- Plain content blocks ---------- */
+.plain-block{ color:var(--muted); margin:0 0 24px 0; text-align:left; }
+.plain-block strong{
+  color:var(--fg); display:block; font-size:19px; margin-bottom:6px; font-weight:600;
+  font-family:"IBM Plex Serif",ui-serif,Georgia,"Times New Roman",serif; letter-spacing:-.003em;
 }
 
-/* Optional: keep long URLs inside the right edge */
-.plain-block a{word-break:break-all}
-
-/* ---------- Research page minimal additions ---------- */
-main{ padding:56px 0; } /* mirrors section spacing */
+/* ---------- Headings ---------- */
 h1{
   font-family:"IBM Plex Serif",ui-serif,Georgia,"Times New Roman",serif;
-  font-size:28px;
-  font-weight:600;
-  margin:0;
-  width:var(--col);
+  font-size:28px; font-weight:600; margin:0;
+  max-width: var(--col);
 }
 
-/* ---------- Responsive Tweak (from research.html) ---------- */
+/* ---------- Misc ---------- */
+.plain-block a{ word-break: break-word; overflow-wrap:anywhere; }
+
+/* ---------- Responsive ---------- */
+/* Slightly wider measure on larger phones/tablets */
+@media (min-width: 480px){
+  :root{ --col: 64ch; }
+}
+
+/* Desktop: restore left-biased rail + breathing room on right */
 @media (min-width: 900px){
   :root{
-    /* Adjust if things look too far right */
-    --pad-right: clamp(260px, 30vw, 720px);
+    --maxw: 1200px;
+    --col: 68ch;                         /* comfortable reading width on desktop */
+    --pad-right: clamp(80px, 16vw, 320px);
+    --gutter-left-desktop: 70px;
+  }
+  .wrap{
+    max-width: var(--maxw);
+    margin: 0 auto 0 max(var(--gutter-left-desktop), env(safe-area-inset-left));
+    padding-left: 0;  /* left rail handled by margin */
+    padding-right: max(var(--pad-right), env(safe-area-inset-right));
   }
 }
 
-.wrap,
-.header-row,
-.hero-inner,
-.plain-block,
-.timeline {
-  margin-left: 70px;   /* Fixed space from the left edge */
-  padding-left: 0;      /* Remove existing variable padding */
-  max-width: none;      /* Allow them to expand as needed */
+/* Extra-wide desktops */
+@media (min-width: 1200px){
+  :root{ --col: 72ch; }
 }
