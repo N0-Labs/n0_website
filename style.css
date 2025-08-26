@@ -207,6 +207,10 @@ a:hover{ color: var(--accent-hover); text-decoration: none; }
   text-transform: uppercase;
   color: var(--fg);
   text-align: center;
+  position: relative;
+  white-space: nowrap;
+  user-select: none;
+  transition: transform 0.1s ease;
 }
 
 @keyframes nullLabsPushIn {
@@ -217,6 +221,119 @@ a:hover{ color: var(--accent-hover); text-decoration: none; }
   100% {
     opacity: 1;
     transform: translateX(0);
+  }
+}
+
+.glitch-stage {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.glitch-canvas {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  mix-blend-mode: difference;
+}
+
+/* Letter displacement classes */
+.letter-glitch-1 { transform: translateX(8px) translateY(-4px); }
+.letter-glitch-2 { transform: translateX(-12px) translateY(8px); }
+.letter-glitch-3 { transform: translateX(6px) translateY(-8px); }
+.letter-glitch-4 { transform: translateX(-8px) translateY(6px); }
+.letter-glitch-5 { transform: translateX(15px) translateY(-6px); }
+.letter-glitch-6 { transform: translateX(-6px) translateY(12px); }
+.letter-glitch-7 { transform: translateX(10px) translateY(-10px); }
+.letter-glitch-8 { transform: translateX(-15px) translateY(8px); }
+
+@keyframes glitchEffect {
+  0%, 90%, 100% {
+    text-shadow: none;
+    transform: translateX(0);
+  }
+  2% {
+    text-shadow: 
+      2px 0 0 #ff0000,
+      -2px 0 0 #00ffff,
+      0 2px 0 #00ff00,
+      0 -2px 0 #ff00ff;
+    transform: translateX(-1px);
+  }
+  4% {
+    text-shadow: 
+      -2px 0 0 #ff0000,
+      2px 0 0 #00ffff,
+      0 -2px 0 #00ff00,
+      0 2px 0 #ff00ff;
+    transform: translateX(1px);
+  }
+  6% {
+    text-shadow: 
+      1px 0 0 #ff0000,
+      -1px 0 0 #00ffff,
+      0 1px 0 #00ff00,
+      0 -1px 0 #ff00ff;
+    transform: translateX(-0.5px);
+  }
+  8% {
+    text-shadow: 
+      -1px 0 0 #ff0000,
+      1px 0 0 #00ffff,
+      0 -1px 0 #00ff00,
+      0 1px 0 #ff00ff;
+    transform: translateX(0.5px);
+  }
+  10% {
+    text-shadow: 
+      3px 0 0 #ff0000,
+      -3px 0 0 #00ffff,
+      0 3px 0 #00ff00,
+      0 -3px 0 #ff00ff;
+    transform: translateX(-2px);
+  }
+  12% {
+    text-shadow: 
+      -3px 0 0 #ff0000,
+      3px 0 0 #00ffff,
+      0 -3px 0 #00ff00,
+      0 3px 0 #ff00ff;
+    transform: translateX(2px);
+  }
+  14% {
+    text-shadow: 
+      0.5px 0 0 #ff0000,
+      -0.5px 0 0 #00ffff,
+      0 0.5px 0 #00ff00,
+      0 -0.5px 0 #ff00ff;
+    transform: translateX(-0.3px);
+  }
+  16% {
+    text-shadow: 
+      -0.5px 0 0 #ff0000,
+      0.5px 0 0 #00ffff,
+      0 -0.5px 0 #00ff00,
+      0 0.5px 0 #ff00ff;
+    transform: translateX(0.3px);
+  }
+  18% {
+    text-shadow: 
+      4px 0 0 #ff0000,
+      -4px 0 0 #00ffff,
+      0 4px 0 #00ff00,
+      0 -4px 0 #ff00ff;
+    transform: translateX(-3px);
+  }
+  20% {
+    text-shadow: 
+      -4px 0 0 #ff0000,
+      4px 0 0 #00ffff,
+      0 -4px 0 #00ff00,
+      0 4px 0 #ff00ff;
+    transform: translateX(3px);
   }
 }
 
@@ -234,6 +351,21 @@ a:hover{ color: var(--accent-hover); text-decoration: none; }
   min-height: 100vh;
   width: 100vw;
   margin-left: calc(-50vw + 50%);
+}
+
+.features-intro {
+  padding: 40px 20px 40px 20px;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.features-intro h2 {
+  font-size: 32px;
+  font-weight: 600;
+  color: var(--bg-white);
+  margin: 0;
+  line-height: 1.3;
 }
 
 .features-grid {
@@ -361,25 +493,26 @@ a:hover{ color: var(--accent-hover); text-decoration: none; }
 /* ---------- Header / Brand / Nav ---------- */
 header{ 
   position: fixed;
-  top: 0;
+  top: 10px;
   left: 0;
   right: 0;
   z-index: 1000;
   display: flex; 
   align-items: center; 
   justify-content: center; 
-  padding: 40px 20px 20px 20px; 
+  padding: 16px 20px; 
   background: transparent;
 }
 
 .header-row{ 
+  margin-top: 10px;
   display: flex; 
   align-items: center; 
   gap: 20px; 
-  background: rgba(245, 245, 245, 0.9);
+  background: rgba(245, 245, 245, 0.6);
   backdrop-filter: blur(10px);
   border-radius: 16px;
-  padding: 16px 24px;
+  padding: 10px 16px;
   justify-content: space-between;
   max-width: 1200px;
   width: calc(100% - 40px);
@@ -396,13 +529,13 @@ header{
 
 /* Research link with steady braces (no layout shift) */
 .research-link{
-  color: var(--accent); 
+  color: var(--fg); 
   font-size: 12px; 
   letter-spacing: .12em; 
   text-transform: uppercase; 
   text-decoration: none; 
   margin: 0;
-  padding: 8px 16px;
+  padding: 4px 8px;
   transition: all 0.2s ease;
   background: transparent;
   display: inline-flex;
@@ -446,7 +579,7 @@ header{
   text-transform: uppercase; 
   text-decoration: none; 
   margin: 0;
-  padding: 8px 16px;
+  padding: 4px 8px;
   transition: all 0.2s ease;
   background: transparent;
   display: inline-flex;

@@ -31,10 +31,13 @@
           <canvas class="hero-canvas" id="nl-particles" aria-hidden="true"></canvas>
           <div class="hero-inner">
             <!-- Hero Logo Animation -->
-            <div class="hero-animation-container">
-              <img src="N0_final-256x256.png" alt="Null Labs Logo" class="hero-logo">
-              <div class="hero-null-labs">NULL LABS</div>
-            </div>
+                          <div class="hero-animation-container">
+                <img src="N0_final-256x256.png" alt="Null Labs Logo" class="hero-logo">
+                <div class="glitch-stage">
+                  <div class="hero-null-labs" id="title">NULL LABS</div>
+                  <canvas class="glitch-canvas" id="glitch"></canvas>
+                </div>
+              </div>
           </div>
         </div>
       </section>
@@ -55,6 +58,9 @@
   <!-- FEATURES SECTION -->
   <div class="band band--light">
     <section class="features-section">
+      <div class="features-intro">
+        <h2>Our platform lets you train models for:</h2>
+      </div>
       <div class="features-grid">
         <div class="feature-rectangle">
           <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='600' viewBox='0 0 800 600'%3E%3Crect width='800' height='600' fill='%23000000'/%3E%3C/svg%3E" alt="Detection" class="feature-image">
@@ -116,4 +122,162 @@
     </div>
   </div>
 </body>
+
+<script>
+(() => {
+  const title = document.getElementById('title');
+  const canvas = document.getElementById('glitch');
+  const ctx = canvas.getContext('2d');
+
+  // Fit canvas to the title's bounding box
+  function fitCanvas() {
+    const rect = title.getBoundingClientRect();
+    const stage = title.parentElement;
+    const pad = 16; // extra area around text for "around it" glitches
+    stage.style.width  = (rect.width  + pad*2) + 'px';
+    stage.style.height = (rect.height + pad*2) + 'px';
+    // Position stage centered (grid takes care of center)
+    canvas.width  = rect.width  + pad*2;
+    canvas.height = rect.height + pad*2;
+  }
+  fitCanvas();
+  window.addEventListener('resize', fitCanvas);
+
+  // Derive a sensible "pixel" size from font size
+  function getPixelSize() {
+    const fs = parseFloat(getComputedStyle(title).fontSize); // px
+    // Tuned for readability; tweak factors to taste
+    const min = Math.max(6, Math.round(fs * 0.08));    // smallest block - bigger
+    const max = Math.max(min+1, Math.round(fs * 0.2)); // largest block - bigger
+    return {min, max};
+  }
+
+  // Draw one burst of random invert-rectangles
+  function glitchBurst() {
+    const {min, max} = getPixelSize();
+    const w = canvas.width, h = canvas.height;
+
+    // clear previous
+    ctx.clearRect(0,0,w,h);
+
+    // A burst: 20–60 blocks for 120–220ms
+    const blocks = 20 + Math.floor(Math.random()*40);
+    ctx.save();
+    
+    // Get title bounds for inside/outside detection
+    const titleRect = title.getBoundingClientRect();
+    const stageRect = title.parentElement.getBoundingClientRect();
+    const titleLeft = titleRect.left - stageRect.left;
+    const titleRight = titleLeft + titleRect.width;
+    const titleTop = titleRect.top - stageRect.top;
+    const titleBottom = titleTop + titleRect.height;
+
+    for (let i=0; i<blocks; i++) {
+      const bw = randInt(min, max);
+      const bh = randInt(min, max);
+      // Expand scatter area slightly beyond text bounds
+      const x = randInt(-Math.floor(max*1.5), w + Math.floor(max*1.5) - bw);
+      const y = randInt(-Math.floor(max*1.5), h + Math.floor(max*1.5) - bh);
+      
+      // Check if pixel is inside or outside title area
+      const pixelCenterX = x + bw/2;
+      const pixelCenterY = y + bh/2;
+      const isInsideTitle = pixelCenterX >= titleLeft && pixelCenterX <= titleRight && 
+                           pixelCenterY >= titleTop && pixelCenterY <= titleBottom;
+      
+      if (isInsideTitle) {
+        // Inside title: use difference mode (white inverts)
+        ctx.globalCompositeOperation = 'source-over';
+        ctx.fillStyle = '#ffffff';
+      } else {
+        // Outside title: use black pixels
+        ctx.globalCompositeOperation = 'source-over';
+        ctx.fillStyle = '#000000';
+      }
+      
+      ctx.fillRect(x, y, bw, bh);
+    }
+    ctx.restore();
+
+    // Add letter displacement effect
+    const letters = title.textContent.split('');
+    const letterElements = [];
+    
+    // Create individual letter spans if they don't exist
+    if (!title.querySelector('.letter')) {
+      title.innerHTML = letters.map((letter, index) => 
+        `<span class="letter" data-index="${index}">${letter}</span>`
+      ).join('');
+    }
+    
+    // Apply random displacement to some letters
+    const letterSpans = title.querySelectorAll('.letter');
+    const glitchClasses = ['letter-glitch-1', 'letter-glitch-2', 'letter-glitch-3', 'letter-glitch-4', 
+                          'letter-glitch-5', 'letter-glitch-6', 'letter-glitch-7', 'letter-glitch-8'];
+    
+    // Clear previous glitch classes
+    letterSpans.forEach(span => {
+      glitchClasses.forEach(cls => span.classList.remove(cls));
+    });
+    
+    // Apply new glitch to random letters
+    const numLettersToGlitch = Math.floor(Math.random() * 4) + 1; // 1-4 letters
+    const shuffledIndices = Array.from({length: letterSpans.length}, (_, i) => i)
+      .sort(() => Math.random() - 0.5);
+    
+    for (let i = 0; i < numLettersToGlitch; i++) {
+      const letterIndex = shuffledIndices[i];
+      const letterSpan = letterSpans[letterIndex];
+      const randomGlitchClass = glitchClasses[Math.floor(Math.random() * glitchClasses.length)];
+      letterSpan.classList.add(randomGlitchClass);
+    }
+
+    // Fade out the burst quickly
+    const start = performance.now();
+    function fade(now) {
+      const t = (now - start) / rand(120, 220); // ms
+      const alpha = Math.max(0, 1 - t);
+      ctx.globalAlpha = alpha;
+      if (alpha > 0) requestAnimationFrame(fade);
+      else { 
+        ctx.globalAlpha = 1; 
+        ctx.clearRect(0,0,w,h);
+        // Remove letter displacement after glitch fades
+        letterSpans.forEach(span => {
+          glitchClasses.forEach(cls => span.classList.remove(cls));
+        });
+      }
+    }
+    requestAnimationFrame(fade);
+  }
+
+  // Schedule periodic bursts after the move-in animation completes
+  title.addEventListener('animationend', () => {
+    // More frequent and sporadic: every 0.5–2.5s with random variations
+    function loop() {
+      glitchBurst();
+      
+      // 30% chance of immediate second burst
+      if (Math.random() < 0.3) {
+        setTimeout(glitchBurst, 50 + Math.random()*150);
+      }
+      
+      // 15% chance of third burst
+      if (Math.random() < 0.15) {
+        setTimeout(glitchBurst, 200 + Math.random()*300);
+      }
+      
+      // Sporadic timing: sometimes very quick, sometimes longer gaps
+      const baseDelay = Math.random() < 0.4 ? rand(500, 1200) : rand(1200, 2500);
+      const randomVariation = Math.random() < 0.2 ? rand(100, 800) : 0; // 20% chance of extra variation
+      setTimeout(loop, baseDelay + randomVariation);
+    }
+    loop();
+  }, { once:true });
+
+  // helpers
+  function rand(min, max) { return min + Math.random()*(max-min); }
+  function randInt(min, max) { return Math.floor(rand(min, max+1)); }
+})();
+</script>
 </html>
