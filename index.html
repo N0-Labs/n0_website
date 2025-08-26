@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Null Labs</title>
   <meta name="description" content="Null Labs — queryable physics & sensor data for intelligent systems." />
-  <meta name="theme-color" content="#0b0d10" />
+  <meta name="theme-color" content="#ffffff" />
   <link rel="icon" type="image/png" href="N0_final-256x256.png" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@500;600;700&display=swap" rel="stylesheet">
@@ -13,37 +13,82 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="wrap">
-    <header class="header-row">
-      <a href="/" class="brand">NULL LABS <span class="slashed-zero">(N0)</span></a>
-      <nav class="primary-nav">
-        <a href="/research/" class="research-link">Research</a>
-      </nav>
-    </header>
+  <header class="header-row">
+    <a href="/" class="brand">
+      <img src="N0_final-256x256.png" alt="Null Labs Logo" class="header-logo">
+    </a>
+    <nav class="primary-nav">
+      <a href="#contact" class="get-started-btn">Get Started</a>
+      <a href="/research/" class="research-link">Research</a>
+    </nav>
+  </header>
 
-  </div>
-
-  <!-- HERO (dark) -->
-  <div class="band band--dark">
+  <!-- HERO ANIMATION (full viewport) -->
+  <div class="band band--white">
     <div class="wrap">
       <section class="hero">
         <div style="position:relative">
           <canvas class="hero-canvas" id="nl-particles" aria-hidden="true"></canvas>
           <div class="hero-inner">
-            <div class="eyebrow">Physics × Data</div>
-            <p class="research-line">
-              We build engines and tools that turn the unfolding of the physical world into 
-              large-scale, high-signal datasets for vision, autonomy, and embodied AI, at scales and levels of variation beyond
-              what is possible in reality. Using these tools, we create autonomous AI labs to accelerate the development of physical intelligence.
-            </p>
+            <!-- Hero Logo Animation -->
+            <div class="hero-animation-container">
+              <img src="N0_final-256x256.png" alt="Null Labs Logo" class="hero-logo">
+              <div class="hero-null-labs">NULL LABS</div>
+            </div>
           </div>
         </div>
       </section>
     </div>
   </div>
 
-  <!-- COMPANY/TEAM (gray) — background shift is banded and aligned at this boundary -->
-  <div class="band band--gray">
+  <!-- STATIC CONTENT SECTION -->
+  <div class="band band--white">
+    <div class="wrap">
+      <section class="static-content">
+        <div class="eyebrow">Physics × Data</div>
+        <h1>An automated AI lab that uses a dynamic dataset to iteratively improve your models</h1>
+        
+      </section>
+    </div>
+  </div>
+
+  <!-- FEATURES SECTION -->
+  <div class="band band--light">
+    <section class="features-section">
+      <div class="features-grid">
+        <div class="feature-rectangle">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='600' viewBox='0 0 800 600'%3E%3Crect width='800' height='600' fill='%23000000'/%3E%3C/svg%3E" alt="Detection" class="feature-image">
+          <div class="feature-overlay">
+            <h3 class="feature-title">Detection</h3>
+            <p class="feature-description">
+              Advanced object detection capabilities for identifying and localizing objects in complex environments with high precision and real-time performance.
+            </p>
+          </div>
+        </div>
+        <div class="feature-rectangle">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='600' viewBox='0 0 800 600'%3E%3Crect width='800' height='600' fill='%23000000'/%3E%3C/svg%3E" alt="Tracking" class="feature-image">
+          <div class="feature-overlay">
+            <h3 class="feature-title">Tracking</h3>
+            <p class="feature-description">
+              Robust multi-object tracking systems that maintain consistent object identities across frames, enabling reliable motion analysis and prediction.
+            </p>
+          </div>
+        </div>
+        <div class="feature-rectangle">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='600' viewBox='0 0 800 600'%3E%3Crect width='800' height='600' fill='%23000000'/%3E%3C/svg%3E" alt="Depth Perception" class="feature-image">
+          <div class="feature-overlay">
+            <h3 class="feature-title">Depth Perception</h3>
+            <p class="feature-description">
+              Sophisticated depth estimation and 3D understanding capabilities for spatial awareness and environment mapping in autonomous systems.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- COMPANY/TEAM (light) — background shift is banded and aligned at this boundary -->
+  <div class="band band--light">
     <div class="wrap">
       <section>
         <p class="plain-block">
@@ -52,7 +97,7 @@
         </p>
         <p class="plain-block">
           <strong>Team</strong>
-          We’re researchers and engineers from robotics, computer vision, machine learning, and neuroscience. Collectively we’ve built automated AI lab infrastructure out of DeepMind, done scaling work for state-of-the-art generative models like Gemini Diffusion, conducted semiconductor and neuromorphic computing research at Stanford, and patented ML on the edge.
+          We're researchers and engineers from robotics, computer vision, machine learning, and neuroscience. Collectively we've built automated AI lab infrastructure out of DeepMind, done scaling work for state-of-the-art generative models like Gemini Diffusion, conducted semiconductor and neuromorphic computing research at Stanford, and patented ML on the edge.
         </p>
       </section>
     </div>
@@ -63,7 +108,7 @@
     <div class="wrap">
       <section>
         <p class="plain-block" style="margin-bottom:0">
-          <strong>Let’s build</strong>
+          <strong>Let's build</strong>
           Partnerships, pilots, or investment: email us at
           <a href="mailto:founders@nulllabs.com">founders@n0labs.com</a>.
         </p>
