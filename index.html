@@ -50,7 +50,11 @@
       <section class="static-content">
         <div class="eyebrow">Physics × Data</div>
         <h1>An automated AI lab that uses a dynamic dataset to iteratively improve your models</h1>
-        
+        <ul class="benefits-list">
+          <li>Cover all your edge cases before you deploy</li>
+          <li>Save weeks from physically collecting and labeling data</li>
+          <li>Deploy models faster than ever before</li>
+        </ul>
       </section>
     </div>
   </div>
@@ -122,6 +126,31 @@
     </div>
   </div>
 </body>
+
+<!-- Modal Form -->
+<div id="contactModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Demo Request</h2>
+    <p class="modal-subtitle">We read everything - expect a response within 24 hours</p>
+    
+    <form
+      action="https://formspree.io/f/xrbagrjy"
+      method="POST"
+      class="contact-form"
+    >
+      <label>
+        Your email:
+        <input type="email" name="email" required>
+      </label>
+      <label>
+        Your message:
+        <textarea name="message" required></textarea>
+      </label>
+      <button type="submit">Send</button>
+    </form>
+  </div>
+</div>
 
 <script>
 (() => {
@@ -279,5 +308,33 @@
   function rand(min, max) { return min + Math.random()*(max-min); }
   function randInt(min, max) { return Math.floor(rand(min, max+1)); }
 })();
+
+// Modal functionality
+document.addEventListener('DOMContentLoaded', function() {
+  const modal = document.getElementById('contactModal');
+  const getStartedBtn = document.querySelector('.get-started-btn');
+  const closeBtn = document.querySelector('.close');
+
+  // Open modal when Get Started is clicked
+  getStartedBtn.addEventListener('click', function(e) {
+    e.preventDefault();
+    modal.style.display = 'block';
+    document.body.style.overflow = 'hidden'; // Prevent scrolling
+  });
+
+  // Close modal when X is clicked
+  closeBtn.addEventListener('click', function() {
+    modal.style.display = 'none';
+    document.body.style.overflow = 'auto'; // Restore scrolling
+  });
+
+  // Close modal when clicking outside of it
+  window.addEventListener('click', function(e) {
+    if (e.target === modal) {
+      modal.style.display = 'none';
+      document.body.style.overflow = 'auto';
+    }
+  });
+});
 </script>
 </html>
