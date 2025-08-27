@@ -597,7 +597,7 @@ header{
 
 .research-link:hover{ 
   text-decoration: none; 
-  color: var(--fg);
+  color: var(--accent);
 }
 
 .research-link:hover::before, .research-link:hover::after{ opacity: 1; }
