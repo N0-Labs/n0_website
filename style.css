@@ -1006,3 +1006,92 @@ h1{
   }
 }
 
+/* ===== 1) Define a single header height and use it everywhere ===== */
+:root { --header-h: 72px; }
+
+/* Your header already looks good; just pin its height so we can subtract it */
+header { height: var(--header-h); }
+
+/* Remove the need for negative hero margins by padding the body correctly */
+body { padding-top: var(--header-h); }
+
+/* ===== 2) Make hero fully visible on all devices (account for fixed header) ===== */
+/* Desktop/laptop (mouse/trackpad): keep look identical but subtract header height */
+@media (hover: hover) and (pointer: fine) {
+  .hero {
+    height: calc(100vh - var(--header-h));
+    min-height: calc(100vh - var(--header-h));
+    margin-top: 0;      /* important: no more -100px */
+    padding: 0;         /* back to your original */
+  }
+}
+
+/* Touch devices: use dynamic viewport units, still subtract header height */
+@media (hover: none) and (pointer: coarse) {
+  .hero {
+    height: auto;
+    min-height: calc(100dvh - var(--header-h));
+    margin-top: 0;
+    padding: 80px 0;   /* breathing room on phones */
+  }
+}
+
+/* Make sure your hero canvas never gets clipped by a parent */
+.hero-canvas { display: block; max-width: 100%; max-height: 100%; }
+
+/* When scrolling to sections, don’t hide titles under the fixed header */
+section, .band { scroll-margin-top: calc(var(--header-h) + 12px); }
+
+/* ===== 3) Features section: keep it fully black on desktop; flexible on mobile ===== */
+/* Desktop: fullscreen black section; grid fills the space below the intro */
+@media (hover: hover) and (pointer: fine) {
+  .features-section {
+    min-height: calc(100vh - var(--header-h));
+    display: flex; flex-direction: column;
+  }
+  .features-grid {
+    flex: 1; height: 100%;
+    grid-auto-rows: 1fr;   /* rows expand evenly if they wrap */
+  }
+}
+
+/* Touch: allow natural height so content isn’t cut off */
+@media (hover: none) and (pointer: coarse) {
+  .features-section { min-height: auto; }
+  .features-grid { height: auto; }
+}
+
+/* ===== 4) Make overlays work on tap (no hover on phones) ===== */
+.feature-rectangle { position: relative; }
+.feature-rectangle:focus-within .feature-overlay,
+.feature-rectangle:focus .feature-overlay,
+.feature-rectangle:active .feature-overlay {
+  opacity: 1;
+}
+
+/* Allow the tile itself to be focusable (see HTML tweak below) */
+.feature-rectangle { outline: none; }
+.feature-rectangle:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+
+/* Optional: show an affordance that tiles are interactive on touch */
+@media (hover: none) and (pointer: coarse) {
+  .feature-overlay { background: rgba(0,0,0,0.7); }
+}
+
+/* ===== 5) Keep desktop look the same across Mac/Windows ===== */
+/* Lock desktop font sizes; only scale on touch devices */
+@media (hover: hover) and (pointer: fine) {
+  h1 { font-size: 48px; }
+  .hero-null-labs { font-size: 48px; }
+  .hero-logo { width: 120px; height: 120px; }
+}
+
+/* Touch devices get fluid sizes */
+@media (hover: none) and (pointer: coarse) {
+  h1 { font-size: clamp(28px, 6vw, 48px); }
+  .hero-null-labs { font-size: clamp(28px, 10vw, 48px); }
+  .hero-logo { width: clamp(56px, 18vw, 120px); height: clamp(56px, 18vw, 120px); }
+}
+
+/* Safety: avoid 1–2px horizontal jiggle with full-bleed bands */
+.band { overflow-x: clip; }
