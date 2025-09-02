@@ -19,7 +19,6 @@
       <span class="brand-text">Null Labs</span>
     </a>
     <nav class="primary-nav">
-      <a href="#contact" class="get-started-btn">Get Started</a>
       <a href="/research/" class="research-link">Research</a>
     </nav>
   </header>
@@ -45,75 +44,6 @@
     </div>
   </div>
 
-  <!-- STATIC CONTENT SECTION -->
-  <div class="band band--white">
-    <div class="wrap">
-      <section class="static-content">
-        <div class="eyebrow">Physics × Data</div>
-        <h1>Physics-grounded data farms and research agents for iterative improvement of autonomous systems</h1>
-        <ul class="benefits-list">
-        <li>Explode coverage: generate and evaluate every physically plausible case before it happens</li>
-        <li>Simulate, learn, and validate in automated loops with our research agents and abstractions</li>
-        <li>Ship faster: give your models decades of realistic sensor experience in hours</li>
-      </ul>
-      </section>
-    </div>
-  </div>
-
-  <!-- FEATURES SECTION -->
-  <div class="band band--light">
-    <section class="features-section">
-      <div class="features-intro">
-        <h2>Our platform lets you train models for:</h2>
-      </div>
-      <div class="features-grid">
-        <div class="feature-rectangle">
-          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='600' viewBox='0 0 800 600'%3E%3Crect width='800' height='600' fill='%23000000'/%3E%3C/svg%3E" alt="Detection" class="feature-image">
-          <div class="feature-overlay">
-            <h3 class="feature-title">Detection</h3>
-            <p class="feature-description">
-              Advanced object detection capabilities for identifying and localizing objects in complex environments with high precision and real-time performance.
-            </p>
-          </div>
-        </div>
-        <div class="feature-rectangle">
-          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='600' viewBox='0 0 800 600'%3E%3Crect width='800' height='600' fill='%23000000'/%3E%3C/svg%3E" alt="Tracking" class="feature-image">
-          <div class="feature-overlay">
-            <h3 class="feature-title">Tracking</h3>
-            <p class="feature-description">
-              Robust multi-object tracking systems that maintain consistent object identities across frames, enabling reliable motion analysis and prediction.
-            </p>
-          </div>
-        </div>
-        <div class="feature-rectangle">
-          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='600' viewBox='0 0 800 600'%3E%3Crect width='800' height='600' fill='%23000000'/%3E%3C/svg%3E" alt="Depth Perception" class="feature-image">
-          <div class="feature-overlay">
-            <h3 class="feature-title">Depth Perception</h3>
-            <p class="feature-description">
-              Sophisticated depth estimation and 3D understanding capabilities for spatial awareness and environment mapping in autonomous systems.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-  </div>
-
-  <!-- COMPANY/TEAM (light) — background shift is banded and aligned at this boundary -->
-  <div class="band band--light">
-    <div class="wrap">
-      <section>
-        <p class="plain-block">
-          <strong>Company</strong>
-          Null Labs is a research and engineering company focused on making physics and sensor data queryable. We believe the next leap in AI will come from compute-scalable datasets found in the structure of physics, mined via high-fidelity, diverse sensor simulation and programmable abstractions. We’re building the infrastructure to generate and query this data, unlocking new capabilities in perception, robotics, and embodied AI.
-        </p>
-        <p class="plain-block">
-          <strong>Team</strong>
-          We're researchers and engineers from robotics, computer vision, machine learning, and neuroscience. Collectively we've built automated AI lab infrastructure out of DeepMind, done scaling work for state-of-the-art generative models like Gemini Diffusion, conducted semiconductor and neuromorphic computing research at Stanford, and patented ML on the edge.
-        </p>
-      </section>
-    </div>
-  </div>
-
   <!-- CONTACT (gray) -->
   <div class="band band--gray">
     <div class="wrap">
@@ -127,31 +57,6 @@
     </div>
   </div>
 </body>
-
-<!-- Modal Form -->
-<div id="contactModal" class="modal">
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <h2>Demo Request</h2>
-    <p class="modal-subtitle">We read everything - expect a response within 24 hours</p>
-    
-    <form
-      action="https://formspree.io/f/xrbagrjy"
-      method="POST"
-      class="contact-form"
-    >
-      <label>
-        Your email:
-        <input type="email" name="email" required>
-      </label>
-      <label>
-        Your message:
-        <textarea name="message" required></textarea>
-      </label>
-      <button type="submit">Send</button>
-    </form>
-  </div>
-</div>
 
 <script>
 (() => {
@@ -313,15 +218,7 @@
 // Modal functionality
 document.addEventListener('DOMContentLoaded', function() {
   const modal = document.getElementById('contactModal');
-  const getStartedBtn = document.querySelector('.get-started-btn');
   const closeBtn = document.querySelector('.close');
-
-  // Open modal when Get Started is clicked
-  getStartedBtn.addEventListener('click', function(e) {
-    e.preventDefault();
-    modal.style.display = 'block';
-    document.body.style.overflow = 'hidden'; // Prevent scrolling
-  });
 
   // Close modal when X is clicked
   closeBtn.addEventListener('click', function() {

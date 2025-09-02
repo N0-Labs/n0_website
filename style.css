@@ -645,39 +645,6 @@ header{
   color: var(--fg);
 }
 
-/* Get Started Button */
-.get-started-btn{
-  color: var(--fg); 
-  font-size: 12px; 
-  letter-spacing: .12em; 
-  text-transform: uppercase; 
-  text-decoration: none; 
-  margin: 0;
-  padding: 4px 8px;
-  transition: all 0.2s ease;
-  background: transparent;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 600;
-}
-
-.get-started-btn::before, .get-started-btn::after{
-  display: inline-block; 
-  opacity: 0; 
-  transition: opacity 120ms ease;
-}
-
-.get-started-btn::before{ content: "["; margin-right: .25em; }
-.get-started-btn::after{ content: "]"; margin-left: .25em; }
-
-.get-started-btn:hover{ 
-  text-decoration: none; 
-  color: var(--accent);
-}
-
-.get-started-btn:hover::before, .get-started-btn:hover::after{ opacity: 1; }
-
 /* ---------- Sections & hero ---------- */
 section{ padding: 80px 0; }
 
