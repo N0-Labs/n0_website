@@ -515,11 +515,9 @@ a:not(.brand):visited { color: var(--accent); }
   padding-top: 0;
   padding-bottom: 0;
   text-align: center;
-  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: -100px;
 }
 
 .hero-inner {
@@ -887,10 +885,7 @@ h1{
   .header-logo { width: 32px; height: 32px; }
 
   /* Desktop hero keeps classic 100vh; no dynamic units */
-  .hero {
-    height: 100vh;
-    min-height: 100vh;
-    margin-top: -100px;   /* your original */
+  .hero {   /* your original */
     padding: 0;           /* as before */
   }
 
@@ -911,8 +906,7 @@ h1{
   /* Fill the visible viewport on mobile (iOS/Android bars) */
   .hero {
     height: auto;
-    min-height: 100svh;   /* small viewport */
-    min-height: 100dvh;   /* dynamic viewport */
+   /* dynamic viewport */
     margin-top: 0;
     padding: 80px 0;
   }
@@ -1062,3 +1056,23 @@ section, .band { scroll-margin-top: calc(var(--header-h) + 12px); }
 
 /* Safety: avoid 1–2px horizontal jiggle with full-bleed bands */
 .band { overflow-x: clip; }
+
+/* Desktop/laptop (mouse/trackpad): hero fills screen minus header */
+@media (hover: hover) and (pointer: fine) {
+  .hero {
+    height: calc(100vh - var(--header-h));
+    min-height: calc(100vh - var(--header-h));
+    margin-top: 0;
+    padding: 0;
+  }
+}
+
+/* Touch devices: use dynamic viewport units so it doesn’t cut off */
+@media (hover: none) and (pointer: coarse) {
+  .hero {
+    height: auto;
+    min-height: calc(100dvh - var(--header-h));  /* dynamic viewport */
+    margin-top: 0;
+    padding: 80px 0;
+  }
+}
