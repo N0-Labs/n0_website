@@ -1125,6 +1125,10 @@ h1{
   filter: grayscale(100%);
 }
 
+.backers-logos .backer-logo--palm-drive {
+  max-height: 200px;
+}
+
 .backers-logos img:hover {
   opacity: 1;
   filter: grayscale(0%);
@@ -1146,6 +1150,10 @@ h1{
   
   .backers-logos img {
     max-height: 80px;
+  }
+
+  .backers-logos .backer-logo--palm-drive {
+    max-height: 100px;
   }
   
   .applications-grid {
