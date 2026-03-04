@@ -11,7 +11,7 @@ const partners = [
 
 export function AcceleratingAutonomy() {
   return (
-    <section className="py-[120px] text-center max-md:py-20">
+    <section id="sitl" className="py-[120px] text-center max-md:py-20">
       <h2 className="font-heading tracking-[0.04em] text-[clamp(36px,5.5vw,68px)] text-foreground text-center mb-8 px-5 leading-[0.95]">
         End-to-end Simulation Software
       </h2>

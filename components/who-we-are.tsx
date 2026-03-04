@@ -1,6 +1,6 @@
 export function WhoWeAre() {
   return (
-    <section className="py-[120px] text-center max-md:py-20">
+    <section id="company" className="py-[120px] text-center max-md:py-20">
       <h2 className="font-heading tracking-[0.04em] text-[clamp(32px,4.5vw,56px)] text-foreground text-center mb-8 px-5 leading-[0.95]">
         Who We Are
       </h2>

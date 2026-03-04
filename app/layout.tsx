@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, IBM_Plex_Serif, Space_Mono, Bebas_Neue } from "next/font/google";
 import "./globals.css";
+import { Navigation } from "@/components/navigation";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const ibmPlexSerif = IBM_Plex_Serif({
@@ -31,7 +32,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#050a0e",
+  themeColor: "#ffffff",
   width: "device-width",
   initialScale: 1,
   viewportFit: "cover",
@@ -44,7 +45,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${inter.variable} ${ibmPlexSerif.variable} ${spaceMono.variable} ${bebasNeue.variable}`}>
-      <body className="font-sans">{children}</body>
+      <body className="font-sans">
+          <Navigation />
+          <main className="pt-16">{children}</main>
+        </body>
     </html>
   );
 }
