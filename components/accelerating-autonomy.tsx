@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { SitlSimulation } from "./sitl-simulation";
 
 const partners = [
   { src: "/ow_logo.png", alt: "Overwatch Imaging" },
@@ -29,6 +30,10 @@ export function AcceleratingAutonomy() {
       >
         Book Demo
       </a>
+
+      {/* SITL Simulation */}
+      <SitlSimulation />
+
       <div className="mt-20 text-center max-md:mt-[60px]">
         <h3 className="font-sans text-lg font-medium text-[rgba(255,255,255,0.7)] uppercase tracking-[0.1em] mb-10">
           Partners
