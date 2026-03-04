@@ -192,13 +192,13 @@ export function GlitchTitle() {
     <div className="relative isolate flex items-center justify-start h-full w-full">
       <div
         ref={titleRef}
-        className="relative select-none whitespace-nowrap text-center mx-auto block font-bold uppercase text-foreground"
+        className="relative select-none whitespace-nowrap text-center mx-auto block font-heading uppercase text-foreground"
         style={{
           opacity: 0,
           animation: "nullLabsPushIn 2s ease forwards",
           animationDelay: "1s",
-          fontSize: "clamp(24px, 4vw, 48px)",
-          letterSpacing: "clamp(0.1em, 0.5vw, 0.24em)",
+          fontSize: "clamp(32px, 5vw, 64px)",
+          letterSpacing: "0.08em",
           transition: "transform 0.1s ease",
         }}
       >

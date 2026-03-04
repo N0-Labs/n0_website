@@ -36,7 +36,7 @@ export default function Home() {
       </div>
 
       {/* Contact */}
-      <div className="bg-panel">
+      <div className="bg-panel border-t border-line">
         <div className="w-full mx-auto px-[max(16px,env(safe-area-inset-left))] md:max-w-[1200px] md:px-5">
           <Contact />
         </div>

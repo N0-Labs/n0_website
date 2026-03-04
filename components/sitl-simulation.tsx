@@ -20,18 +20,19 @@ export function SitlSimulation() {
     <div className="flex flex-col items-center w-full mt-20 max-md:mt-14">
       {/* Simulation Canvas */}
       <div
-        className="relative w-full border border-b-0 overflow-hidden"
+        className="relative w-full overflow-hidden"
         style={{
           aspectRatio: "16/8",
-          borderColor: "rgba(0,255,178,0.15)",
+          border: "1px solid rgba(0,255,178,0.15)",
+          borderBottom: "none",
           background: "#060d10",
         }}
       >
         {/* Corner brackets */}
-        <div className="absolute top-0 left-0 w-5 h-5 border-t-2 border-l-2 border-[#00ffb2]" />
-        <div className="absolute top-0 right-0 w-5 h-5 border-t-2 border-r-2 border-[#00ffb2]" />
-        <div className="absolute bottom-0 left-0 w-5 h-5 border-b-2 border-l-2 border-[#00ffb2]" />
-        <div className="absolute bottom-0 right-0 w-5 h-5 border-b-2 border-r-2 border-[#00ffb2]" />
+        <div className="absolute top-0 left-0 w-5 h-5 border-t-2 border-l-2 border-accent z-10" />
+        <div className="absolute top-0 right-0 w-5 h-5 border-t-2 border-r-2 border-accent z-10" />
+        <div className="absolute bottom-0 left-0 w-5 h-5 border-b-2 border-l-2 border-accent z-10" />
+        <div className="absolute bottom-0 right-0 w-5 h-5 border-b-2 border-r-2 border-accent z-10" />
 
         {/* Grid background */}
         <div
@@ -151,34 +152,49 @@ export function SitlSimulation() {
           />
         </svg>
 
-        {/* Drones */}
-        <div className="sitl-drone sitl-drone--default sitl-d1" />
-        <div className="sitl-drone sitl-drone--blue sitl-d2" />
-        <div className="sitl-drone sitl-drone--default sitl-d3" />
-        <div className="sitl-drone sitl-drone--hostile sitl-d4" />
-        <div className="sitl-drone sitl-drone--default sitl-d5" />
+        {/* Drones - using inline styles for initial position + z-index */}
+        <div
+          className="sitl-drone sitl-drone--default sitl-d1"
+          style={{ left: "20%", top: "30%", zIndex: 5 }}
+        />
+        <div
+          className="sitl-drone sitl-drone--blue sitl-d2"
+          style={{ left: "75%", top: "25%", zIndex: 5 }}
+        />
+        <div
+          className="sitl-drone sitl-drone--default sitl-d3"
+          style={{ left: "50%", top: "50%", zIndex: 5 }}
+        />
+        <div
+          className="sitl-drone sitl-drone--hostile sitl-d4"
+          style={{ left: "15%", top: "60%", zIndex: 5 }}
+        />
+        <div
+          className="sitl-drone sitl-drone--default sitl-d5"
+          style={{ left: "88%", top: "70%", zIndex: 5 }}
+        />
 
         {/* HUD overlays */}
-        <div className="absolute top-3.5 left-[18px] font-mono text-[9px] text-[#00ffb2] opacity-70 leading-[1.7] max-md:hidden">
+        <div className="absolute top-3.5 left-[18px] font-mono text-[9px] text-accent opacity-70 leading-[1.7] max-md:hidden z-10">
           SIM_ENV: ACTIVE
           <br />
           FRAME: <span ref={frameRef}>00000</span>
           <br />
           AGENTS: 05
         </div>
-        <div className="absolute top-3.5 right-[18px] font-mono text-[9px] text-[#00ffb2] opacity-70 leading-[1.7] text-right max-md:hidden">
+        <div className="absolute top-3.5 right-[18px] font-mono text-[9px] text-accent opacity-70 leading-[1.7] text-right max-md:hidden z-10">
           SCENARIO: URBAN_SWEEP
           <br />
           LATENCY: 0ms
           <br />
           MODE: SITL
         </div>
-        <div className="absolute bottom-3.5 left-[18px] font-mono text-[9px] text-[#00ffb2] opacity-70 leading-[1.7] max-md:hidden">
+        <div className="absolute bottom-3.5 left-[18px] font-mono text-[9px] text-accent opacity-70 leading-[1.7] max-md:hidden z-10">
           ALT: 120M AGL
           <br />
           WIND: 3.2 M/S NW
         </div>
-        <div className="absolute bottom-3.5 right-[18px] font-mono text-[9px] text-[#00ffb2] opacity-70 leading-[1.7] text-right max-md:hidden">
+        <div className="absolute bottom-3.5 right-[18px] font-mono text-[9px] text-accent opacity-70 leading-[1.7] text-right max-md:hidden z-10">
           THREAT: DETECTED
           <br />
           INTERCEPT: CALC...
@@ -195,8 +211,8 @@ export function SitlSimulation() {
           gridTemplateColumns: "1fr auto",
         }}
       >
-        <div>
-          <div className="font-mono text-[10px] tracking-[0.18em] text-[#00ffb2] uppercase mb-3.5 flex items-center gap-2">
+        <div className="text-left">
+          <div className="font-mono text-[10px] tracking-[0.18em] text-accent uppercase mb-3.5 flex items-center gap-2">
             <span
               className="inline-block w-1.5 h-1.5 rounded-full sitl-blink"
               style={{
@@ -215,18 +231,18 @@ export function SitlSimulation() {
           >
             Build Any Scenario.
             <br />
-            <span className="text-[#00ffb2]">Throw Your System</span>
+            <span className="text-accent">Throw Your System</span>
             <br />
             Into It.
           </h2>
           <p
-            className="font-light max-w-[520px] leading-[1.65]"
+            className="font-sans max-w-[520px] leading-[1.65]"
             style={{
               fontSize: "clamp(13px, 1.5vw, 15px)",
               color: "rgba(212,245,236,0.4)",
             }}
           >
-            <strong className="font-medium" style={{ color: "#d4f5ec" }}>
+            <strong className="font-bold" style={{ color: "#d4f5ec" }}>
               Without a second{"'"}s notice.
             </strong>{" "}
             Drop your autonomy stack into any simulated environment — urban,
@@ -279,12 +295,13 @@ function StatItem({ value, label }: { value: string; label: string }) {
       className="text-right pr-4 max-md:text-center max-md:border-r-0 max-md:pr-0"
       style={{ borderRight: "2px solid rgba(0,255,178,0.2)" }}
     >
-      <div
-        className="font-heading text-[32px] text-[#00ffb2] leading-none tracking-[0.04em]"
-      >
+      <div className="font-heading text-[32px] text-accent leading-none tracking-[0.04em]">
         {value}
       </div>
-      <div className="font-mono text-[8px] tracking-[0.12em] uppercase mt-0.5" style={{ color: "rgba(212,245,236,0.4)" }}>
+      <div
+        className="font-mono text-[8px] tracking-[0.12em] uppercase mt-0.5"
+        style={{ color: "rgba(212,245,236,0.4)" }}
+      >
         {label}
       </div>
     </div>

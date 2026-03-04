@@ -1,18 +1,17 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-background: #000000;
-  --color-foreground: #ffffff;
-  --color-muted: #cccccc;
-  --color-muted-2: #aaaaaa;
-  --color-panel: #1a1a1a;
-  --color-accent: #60a5fa;
-  --color-accent-hover: #3b82f6;
-  --color-line: rgba(255, 255, 255, 0.08);
-  --color-line-strong: rgba(255, 255, 255, 0.15);
+  --color-background: #050a0e;
+  --color-foreground: #d4f5ec;
+  --color-muted: rgba(212, 245, 236, 0.6);
+  --color-muted-2: rgba(212, 245, 236, 0.4);
+  --color-panel: #070f12;
+  --color-accent: #00ffb2;
+  --color-accent-hover: #00e6a0;
+  --color-line: rgba(0, 255, 178, 0.08);
+  --color-line-strong: rgba(0, 255, 178, 0.15);
 
-  --font-sans: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI",
-    Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-sans: var(--font-space-mono), ui-monospace, monospace;
   --font-serif: var(--font-ibm-plex-serif), Georgia, serif;
   --font-mono: var(--font-space-mono), ui-monospace, monospace;
   --font-heading: var(--font-bebas-neue), "Impact", sans-serif;

@@ -13,7 +13,7 @@ const backers = [
 export function Backers() {
   return (
     <section className="py-[120px] text-center max-md:py-20">
-      <h2 className="font-sans text-[36px] font-semibold text-foreground text-center mb-8 tracking-[-0.02em] px-5 max-md:text-[28px]">
+      <h2 className="font-heading tracking-[0.04em] text-[clamp(32px,4.5vw,56px)] text-foreground text-center mb-8 px-5 leading-[0.95]">
         Our Backers
       </h2>
       <div className="flex flex-wrap justify-center items-center gap-10 max-w-[1000px] mt-[60px] mx-auto max-md:gap-[30px]">

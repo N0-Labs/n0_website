@@ -12,21 +12,21 @@ const partners = [
 export function AcceleratingAutonomy() {
   return (
     <section className="py-[120px] text-center max-md:py-20">
-      <h2 className="font-sans font-bold tracking-[-0.03em] text-[42px] text-foreground text-center mb-8 px-5 max-md:text-[32px]">
+      <h2 className="font-heading tracking-[0.04em] text-[clamp(36px,5.5vw,68px)] text-foreground text-center mb-8 px-5 leading-[0.95]">
         End-to-end Simulation Software
       </h2>
-      <p className="font-sans text-[24px] leading-[1.8] tracking-[-0.01em] text-[rgba(255,255,255,0.85)] text-center max-w-[800px] mx-auto px-5 max-md:text-[20px] max-md:leading-[1.75]">
+      <p className="font-sans text-[clamp(14px,1.5vw,16px)] leading-[1.8] tracking-[0.02em] text-muted text-center max-w-[800px] mx-auto px-5">
         We replace slow, resource-heavy data collection with next-generation
         simulation. Our engine produces data with proven{" "}
-        <span className="text-foreground font-medium">sim-to-real transfer</span>.
+        <span className="text-foreground font-bold">sim-to-real transfer</span>.
       </p>
-      <p className="font-sans text-[20px] tracking-[-0.01em] text-[rgba(255,255,255,0.85)] text-center mt-10 mb-6 mx-auto">
+      <p className="font-sans text-[clamp(13px,1.4vw,15px)] tracking-[0.02em] text-muted-2 text-center mt-10 mb-6 mx-auto">
         For any domain, any platform. Build scenarios in virtual worlds to test
         and train your autonomy.
       </p>
       <a
         href="mailto:founders@n0labs.com?subject=Book Demo"
-        className="inline-block font-sans text-base font-semibold text-foreground bg-transparent border-2 border-accent rounded-xl px-8 py-3.5 no-underline tracking-[-0.01em] mx-auto max-w-fit transition-all duration-300 hover:bg-accent hover:text-background hover:-translate-y-0.5 hover:shadow-[0_4px_12px_rgba(96,165,250,0.3)]"
+        className="inline-block font-sans text-sm font-bold text-background bg-accent border-2 border-accent rounded-xl px-8 py-3.5 no-underline tracking-[0.08em] uppercase mx-auto max-w-fit transition-all duration-300 hover:bg-accent-hover hover:border-accent-hover hover:-translate-y-0.5 hover:shadow-[0_4px_12px_rgba(0,255,178,0.3)]"
       >
         Book Demo
       </a>
@@ -35,7 +35,7 @@ export function AcceleratingAutonomy() {
       <SitlSimulation />
 
       <div className="mt-20 text-center max-md:mt-[60px]">
-        <h3 className="font-sans text-lg font-medium text-[rgba(255,255,255,0.7)] uppercase tracking-[0.1em] mb-10">
+        <h3 className="font-sans text-xs font-bold text-muted uppercase tracking-[0.18em] mb-10">
           Partners
         </h3>
         <div className="flex flex-wrap justify-center items-center gap-10 max-w-[1000px] mx-auto max-md:gap-[30px]">
