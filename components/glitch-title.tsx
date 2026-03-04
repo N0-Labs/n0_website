@@ -124,6 +124,7 @@ export function GlitchTitle() {
     // Fade out
     const start = performance.now();
     function fade(now: number) {
+      if (!ctx) return;
       const t = (now - start) / rand(120, 220);
       const alpha = Math.max(0, 1 - t);
       ctx.globalAlpha = alpha;
