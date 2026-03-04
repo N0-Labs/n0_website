@@ -11,11 +11,11 @@
   --color-line: rgba(255, 255, 255, 0.08);
   --color-line-strong: rgba(255, 255, 255, 0.15);
 
-  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    "Helvetica Neue", Arial, sans-serif;
-  --font-serif: "IBM Plex Serif", Georgia, serif;
-  --font-mono: "Space Mono", ui-monospace, monospace;
-  --font-heading: "Bebas Neue", "Impact", sans-serif;
+  --font-sans: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-serif: var(--font-ibm-plex-serif), Georgia, serif;
+  --font-mono: var(--font-space-mono), ui-monospace, monospace;
+  --font-heading: var(--font-bebas-neue), "Impact", sans-serif;
 }
 
 /* ---------- Base Reset ---------- */
@@ -239,4 +239,70 @@ body {
     left: 88%;
     top: 70%;
   }
+}
+
+/* ---------- SITL Drone Classes ---------- */
+.sitl-drone {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.sitl-drone::after {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 255, 178, 0.5);
+  animation: ping2 2s ease-out infinite;
+}
+
+.sitl-drone--default {
+  background: #00ffb2;
+  box-shadow: 0 0 12px #00ffb2, 0 0 24px rgba(0, 255, 178, 0.4);
+}
+.sitl-drone--default::after {
+  border-color: rgba(0, 255, 178, 0.5);
+}
+
+.sitl-drone--hostile {
+  background: #ff6b35;
+  box-shadow: 0 0 12px #ff6b35, 0 0 24px rgba(255, 107, 53, 0.4);
+}
+.sitl-drone--hostile::after {
+  border-color: rgba(255, 107, 53, 0.5);
+}
+
+.sitl-drone--blue {
+  background: #00cfff;
+  box-shadow: 0 0 12px #00cfff, 0 0 24px rgba(0, 207, 255, 0.4);
+}
+.sitl-drone--blue::after {
+  border-color: rgba(0, 207, 255, 0.5);
+}
+
+.sitl-d1 { animation: move1 8s linear infinite; }
+.sitl-d2 { animation: move2 11s linear infinite; }
+.sitl-d3 { animation: move3 9s linear infinite; }
+.sitl-d4 { animation: move4 7s linear infinite; animation-delay: -3s; }
+.sitl-d5 { animation: move5 13s linear infinite; animation-delay: -5s; }
+
+/* ---------- SITL sweep + scan + ticker ---------- */
+.sitl-sweep {
+  animation: sweep 3s linear infinite;
+}
+
+.sitl-scan {
+  animation: scan 4s linear infinite;
+}
+
+.sitl-blink {
+  animation: blink 1.4s ease-in-out infinite;
+}
+
+.sitl-ticker {
+  display: inline-block;
+  animation: ticker 20s linear infinite;
 }
