@@ -6,7 +6,7 @@ import { Contact } from "@/components/contact";
 
 export default function Home() {
   return (
-    <main>
+    <main className="min-h-screen">
       {/* Hero Section */}
       <div className="bg-background">
         <div className="w-full mx-auto px-[max(16px,env(safe-area-inset-left))] md:max-w-[1200px] md:px-5">
