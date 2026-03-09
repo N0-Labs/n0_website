@@ -85,7 +85,7 @@ export function GlitchTitle() {
         pixelCenterY <= titleBottom;
 
       ctx.globalCompositeOperation = "source-over";
-      ctx.fillStyle = isInsideTitle ? "#0a1f1a" : "#ffffff";
+      ctx.fillStyle = isInsideTitle ? "#b8f5d8" : "#061a12";
       ctx.fillRect(x, y, bw, bh);
     }
     ctx.restore();
