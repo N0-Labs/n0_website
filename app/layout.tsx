@@ -45,7 +45,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${inter.variable} ${ibmPlexSerif.variable} ${spaceMono.variable} ${bebasNeue.variable}`}>
-      <body className="font-sans">
+      <body className="font-sans bg-background text-foreground antialiased">
           <Navigation />
           <main className="pt-16">{children}</main>
         </body>
