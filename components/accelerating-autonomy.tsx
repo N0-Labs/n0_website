@@ -16,8 +16,7 @@ export function AcceleratingAutonomy() {
         End-to-end Simulation Software
       </h2>
       <p className="font-sans text-[clamp(14px,1.5vw,16px)] leading-[1.8] tracking-[0.02em] text-muted text-center max-w-[800px] mx-auto px-5">
-        Photorealistic simulation for autonomy teams. Generate synthetic training data and validate your full stack — with{" "}
-        <span className="text-foreground font-bold">proven sim-to-real transfer</span>.
+        Photorealistic, real-time, open-environment simulation for robotics operating in unstructured environments.
       </p>
       <p className="font-sans text-[clamp(13px,1.4vw,15px)] tracking-[0.02em] text-muted-2 text-center mt-10 mb-6 mx-auto">
         For any domain, any platform. Build scenarios in virtual worlds to test
