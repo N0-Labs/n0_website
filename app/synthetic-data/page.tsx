@@ -49,9 +49,9 @@ const procGen = [
 ];
 
 const stats = [
-  { value: "10M+", label: "Annotated frames" },
-  { value: "50+", label: "Domain archetypes" },
-  { value: "< 1hr", label: "From brief to dataset" },
+  { value: "10K", label: "Images / 20 min" },
+  { value: "3X", label: "Model deployment cycles" },
+  { value: "1000+", label: "Asset database" },
   { value: "Proven", label: "Sim-to-real transfer" },
 ];
 
