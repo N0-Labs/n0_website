@@ -29,7 +29,7 @@ const domainData: Record<
       "Unmanned Ground Vehicle perception training across woodland, contested terrain, and varied lighting conditions.",
   },
   USV: {
-    images: ["/usv/scene-0.jpg", "/usv/scene-1.jpg"],
+    images: ["/usv/scene-0.jpg", "/usv/scene-1.jpg", "/synth-maritime.jpg"],
     description:
       "Unmanned Surface Vessel detection in open ocean, harbor, and adverse maritime weather conditions.",
   },
