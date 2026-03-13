@@ -34,11 +34,6 @@ const domainData: Record<
     description:
       "Unmanned Surface Vessel detection in open ocean, harbor, and adverse maritime weather conditions.",
   },
-  UAS: {
-    images: ["/synth-proc-desert.jpg", "/synth-proc-snow.jpg", "/synth-proc-night.jpg"],
-    description:
-      "Unmanned Aerial System scenarios spanning desert, arctic, and night/thermal domains.",
-  },
 };
 
 const domainLabels: { key: string; label: string }[] = [
