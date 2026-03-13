@@ -24,7 +24,7 @@ const roles = [
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
-    companyName: "Null Labs",
+    companyName: "",
     platformType: "",
     platformTypeOther: "",
     role: "",
@@ -156,7 +156,7 @@ export default function ContactPage() {
               value={formData.companyName}
               onChange={handleChange}
               className="w-full bg-panel border border-line-strong rounded-lg px-4 py-3 font-mono text-sm text-foreground placeholder:text-muted-2 focus:outline-none focus:border-accent/50 transition-colors"
-              placeholder="Acme Robotics"
+              placeholder="Null Labs"
             />
           </div>
 
