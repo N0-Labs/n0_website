@@ -5,7 +5,7 @@ export function WhoWeAre() {
         Who We Are
       </h2>
       <p className="font-sans text-[clamp(13px,1.4vw,15px)] leading-[1.7] text-muted text-center max-w-[800px] mx-auto px-5">
-        {"We're a team of researchers and engineers from robotics, computer vision, machine learning, and neuroscience. Our collective experience spans automated AI lab infrastructure at DeepMind, scaling work for state-of-the-art generative models like Gemini Diffusion, semiconductor and neuromorphic computing research at Stanford, and patented ML on the edge technologies."}
+        {"We're a small, focused team of ex-Stanford and ex-Google DeepMind researchers and engineers who've spent years building expertise in training perception models with simulation — from traditional classifiers to VLAs and VLMs. Small means fast, direct, and deeply invested in your success. Whatever your simulation use case, we'll execute."}
       </p>
     </section>
   );
