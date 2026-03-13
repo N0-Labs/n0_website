@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { DomainShowcase } from "@/components/domain-showcase";
 
 const domains = [
   {
@@ -22,29 +23,6 @@ const domains = [
     label: "Ground Combat",
     tag: "Contested / Overcast",
     desc: "Degraded infrastructure, cluttered terrain, and adverse weather for edge-case ISR and autonomy training.",
-  },
-];
-
-const procGen = [
-  {
-    src: "/synth-proc-desert.jpg",
-    label: "Desert",
-    weather: "Clear / Heat Haze",
-  },
-  {
-    src: "/synth-proc-snow.jpg",
-    label: "Arctic",
-    weather: "Blizzard / White-out",
-  },
-  {
-    src: "/synth-proc-night.jpg",
-    label: "Night IR",
-    weather: "Thermal / No-Light",
-  },
-  {
-    src: "/synth-proc-fog.jpg",
-    label: "Maritime",
-    weather: "Dense Fog / Low-Vis",
   },
 ];
 
@@ -157,51 +135,8 @@ export default function SyntheticDataPage() {
         </div>
       </section>
 
-      {/* Procedural generation */}
-      <section className="py-20 px-5 max-w-[1200px] mx-auto border-t border-line">
-        <div className="mb-12">
-          <p className="font-mono text-xs tracking-[0.18em] uppercase text-accent mb-3">
-            Easy Procedural Generation
-          </p>
-          <h2 className="font-heading text-[clamp(28px,4vw,48px)] tracking-[0.04em] text-foreground mb-4">
-            Any Domain. Any Weather. On Demand.
-          </h2>
-          <p className="font-mono text-sm leading-[1.8] text-muted max-w-[60ch]">
-            Spin up fully-configured environments across domains and atmospheric
-            conditions in minutes. No manual scene setup — our procedural
-            pipeline handles asset placement, lighting, and weather
-            parametrically.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          {procGen.map((item) => (
-            <div
-              key={item.label}
-              className="group relative overflow-hidden rounded-xl border border-line hover:border-accent/40 transition-colors duration-300"
-            >
-              <div className="relative aspect-[4/3] overflow-hidden">
-                <Image
-                  src={item.src}
-                  alt={`${item.label} — ${item.weather}`}
-                  fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  sizes="(max-width: 768px) 50vw, 25vw"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
-              </div>
-              <div className="absolute bottom-0 left-0 right-0 p-4">
-                <p className="font-heading text-[18px] tracking-[0.05em] text-foreground leading-tight">
-                  {item.label}
-                </p>
-                <p className="font-mono text-[10px] tracking-[0.12em] uppercase text-accent mt-0.5">
-                  {item.weather}
-                </p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
+      {/* Procedural generation with domain showcase */}
+      <DomainShowcase />
 
       {/* Capabilities */}
       <section className="py-20 px-5 max-w-[1200px] mx-auto border-t border-line">
