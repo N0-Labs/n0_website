@@ -7,7 +7,7 @@ const domainData: Record<
   string,
   { images: string[]; description: string }
 > = {
-  CUAS: {
+  "UAS/CUAS": {
     images: [
       "/cuas/scene-0.jpg",
       "/cuas/scene-1.jpg",
@@ -19,9 +19,10 @@ const domainData: Record<
       "/cuas/scene-7.jpg",
       "/cuas/scene-8.jpg",
       "/cuas/scene-9.jpg",
+      "/cuas/scene-10.jpg",
     ],
     description:
-      "Counter-UAS detection across mountain, forest, and open sky environments with varied lighting and weather conditions.",
+      "UAS and Counter-UAS detection across mountain, forest, urban, and open sky environments with varied lighting and weather conditions.",
   },
   UGV: {
     images: ["/synth-land.jpg", "/synth-urban.jpg", "/ugv/scene-0.jpg", "/ugv/scene-1.jpg", "/ugv/scene-2.jpg"],
@@ -41,14 +42,13 @@ const domainData: Record<
 };
 
 const domainLabels: { key: string; label: string }[] = [
-  { key: "CUAS", label: "CUAS" },
+  { key: "UAS/CUAS", label: "UAS/CUAS" },
   { key: "UGV", label: "UGV" },
   { key: "USV", label: "USV" },
-  { key: "UAS", label: "UAS" },
 ];
 
 export function DomainShowcase() {
-  const [activeDomain, setActiveDomain] = useState("CUAS");
+  const [activeDomain, setActiveDomain] = useState("UAS/CUAS");
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const domain = domainData[activeDomain];
