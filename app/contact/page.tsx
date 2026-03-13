@@ -98,12 +98,7 @@ export default function ContactPage() {
             </a>
             .
           </p>
-          <Link
-            href="/"
-            className="inline-block font-mono text-xs tracking-[0.12em] uppercase text-foreground/70 border border-line-strong px-7 py-3.5 rounded-lg transition-all duration-200 hover:text-foreground hover:border-accent/50"
-          >
-            Back to Home
-          </Link>
+
         </div>
       </main>
     );

@@ -60,20 +60,7 @@ export default function SyntheticDataPage() {
           performance gains without the cost, delay, or risk of real-world data
           collection.
         </p>
-        <div className="flex flex-wrap gap-4 mt-10">
-          <Link
-            href="/contact"
-            className="inline-block font-mono text-xs font-bold tracking-[0.12em] uppercase text-background bg-accent px-7 py-3.5 rounded-lg transition-all duration-200 hover:bg-accent-hover hover:-translate-y-0.5 hover:shadow-[0_4px_20px_rgba(0,232,150,0.35)]"
-          >
-            Request a Dataset
-          </Link>
-          <Link
-            href="/"
-            className="inline-block font-mono text-xs tracking-[0.12em] uppercase text-foreground/70 border border-line-strong px-7 py-3.5 rounded-lg transition-all duration-200 hover:text-foreground hover:border-accent/50"
-          >
-            Back to Home
-          </Link>
-        </div>
+
       </section>
 
       {/* Stats strip */}
