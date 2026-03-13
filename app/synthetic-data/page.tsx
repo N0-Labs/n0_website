@@ -61,12 +61,12 @@ export default function SyntheticDataPage() {
           collection.
         </p>
         <div className="flex flex-wrap gap-4 mt-10">
-          <a
-            href="mailto:founders@n0labs.com?subject=Synthetic Data — Demo Request"
+          <Link
+            href="/contact"
             className="inline-block font-mono text-xs font-bold tracking-[0.12em] uppercase text-background bg-accent px-7 py-3.5 rounded-lg transition-all duration-200 hover:bg-accent-hover hover:-translate-y-0.5 hover:shadow-[0_4px_20px_rgba(0,232,150,0.35)]"
           >
             Request a Dataset
-          </a>
+          </Link>
           <Link
             href="/"
             className="inline-block font-mono text-xs tracking-[0.12em] uppercase text-foreground/70 border border-line-strong px-7 py-3.5 rounded-lg transition-all duration-200 hover:text-foreground hover:border-accent/50"
@@ -176,12 +176,12 @@ export default function SyntheticDataPage() {
               and get back to you within 24 hours.
             </p>
           </div>
-          <a
-            href="mailto:founders@n0labs.com?subject=Synthetic Data — Dataset Request"
+          <Link
+            href="/contact"
             className="shrink-0 inline-block font-mono text-xs font-bold tracking-[0.12em] uppercase text-background bg-accent px-8 py-4 rounded-lg transition-all duration-200 hover:bg-accent-hover hover:-translate-y-0.5 hover:shadow-[0_4px_20px_rgba(0,232,150,0.35)] whitespace-nowrap"
           >
             Get in Touch
-          </a>
+          </Link>
         </div>
       </section>
     </main>
