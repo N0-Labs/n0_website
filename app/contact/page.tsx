@@ -26,7 +26,9 @@ export default function ContactPage() {
   const [formData, setFormData] = useState({
     companyName: "",
     platformType: "",
+    platformTypeOther: "",
     role: "",
+    roleOther: "",
     email: "",
     additionalInfo: "",
   });
@@ -44,8 +46,10 @@ export default function ContactPage() {
     const subject = encodeURIComponent(
       `Contact Request from ${formData.companyName}`
     );
+    const platformDisplay = formData.platformType === "Other" ? `Other: ${formData.platformTypeOther}` : formData.platformType;
+    const roleDisplay = formData.role === "Other" ? `Other: ${formData.roleOther}` : formData.role;
     const body = encodeURIComponent(
-      `Company: ${formData.companyName}\nPlatform Type: ${formData.platformType}\nRole: ${formData.role}\nEmail: ${formData.email}\n\nAdditional Information:\n${formData.additionalInfo}`
+      `Company: ${formData.companyName}\nPlatform Type: ${platformDisplay}\nRole: ${roleDisplay}\nEmail: ${formData.email}\n\nAdditional Information:\n${formData.additionalInfo}`
     );
     window.location.href = `mailto:founders@n0labs.com?subject=${subject}&body=${body}`;
 
@@ -187,6 +191,18 @@ export default function ContactPage() {
                 </option>
               ))}
             </select>
+            {formData.platformType === "Other" && (
+              <input
+                type="text"
+                id="platformTypeOther"
+                name="platformTypeOther"
+                required
+                value={formData.platformTypeOther}
+                onChange={handleChange}
+                className="mt-3 w-full bg-panel border border-line-strong rounded-lg px-4 py-3 font-mono text-sm text-foreground placeholder:text-muted-2 focus:outline-none focus:border-accent/50 transition-colors"
+                placeholder="Please specify..."
+              />
+            )}
           </div>
 
           {/* Role */}
@@ -220,6 +236,18 @@ export default function ContactPage() {
                 </option>
               ))}
             </select>
+            {formData.role === "Other" && (
+              <input
+                type="text"
+                id="roleOther"
+                name="roleOther"
+                required
+                value={formData.roleOther}
+                onChange={handleChange}
+                className="mt-3 w-full bg-panel border border-line-strong rounded-lg px-4 py-3 font-mono text-sm text-foreground placeholder:text-muted-2 focus:outline-none focus:border-accent/50 transition-colors"
+                placeholder="Please specify your role..."
+              />
+            )}
           </div>
 
           {/* Email */}
