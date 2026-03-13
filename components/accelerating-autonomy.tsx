@@ -23,12 +23,14 @@ export function AcceleratingAutonomy() {
         For any domain, any platform. Build scenarios in virtual worlds to test
         and train your autonomy.
       </p>
-      <Link
-        href="/contact"
+      <a
+        href="https://linkedin.com/in/krisluo"
+        target="_blank"
+        rel="noopener noreferrer"
         className="inline-block font-sans text-sm font-bold text-background bg-accent border-2 border-accent rounded-xl px-8 py-3.5 no-underline tracking-[0.08em] uppercase mx-auto max-w-fit transition-all duration-300 hover:bg-accent-hover hover:border-accent-hover hover:-translate-y-0.5 hover:shadow-[0_4px_12px_rgba(0,255,178,0.3)]"
       >
         Book Demo
-      </Link>
+      </a>
 
       <div className="mt-20 text-center max-md:mt-[60px]">
         <h3 className="font-sans text-xs font-bold text-muted uppercase tracking-[0.18em] mb-10">
