@@ -24,7 +24,7 @@ const roles = [
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
-    companyName: "",
+    companyName: "Null Labs",
     platformType: "",
     platformTypeOther: "",
     role: "",
