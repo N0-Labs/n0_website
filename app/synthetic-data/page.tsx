@@ -155,13 +155,9 @@ export default function SyntheticDataPage() {
       <section className="py-20 px-5 max-w-[1200px] mx-auto border-t border-line">
         <div className="bg-panel border border-line-strong rounded-2xl p-10 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
           <div>
-            <h3 className="font-heading text-[clamp(24px,3.5vw,40px)] tracking-[0.04em] text-foreground leading-[0.95] mb-2">
+            <h3 className="font-heading text-[clamp(24px,3.5vw,40px)] tracking-[0.04em] text-foreground leading-[0.95]">
               Ready to close the sim-to-real gap?
             </h3>
-            <p className="font-mono text-sm text-muted max-w-[50ch]">
-              Tell us your domain, platform, and task — we will scope a dataset
-              and get back to you within 24 hours.
-            </p>
           </div>
           <Link
             href="/contact"
