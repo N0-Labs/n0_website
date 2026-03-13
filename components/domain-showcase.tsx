@@ -24,9 +24,9 @@ const domainData: Record<
       "Counter-UAS detection across mountain, forest, and open sky environments with varied lighting and weather conditions.",
   },
   UGV: {
-    images: ["/synth-land.jpg", "/synth-urban.jpg"],
+    images: ["/ugv/scene-0.jpg", "/ugv/scene-1.jpg", "/ugv/scene-2.jpg"],
     description:
-      "Unmanned Ground Vehicle perception training across woodland, contested terrain, and urban environments.",
+      "Unmanned Ground Vehicle perception training across woodland, contested terrain, and varied lighting conditions.",
   },
   USV: {
     images: ["/synth-maritime.jpg", "/synth-proc-fog.jpg"],
