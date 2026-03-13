@@ -7,6 +7,14 @@ export function WhoWeAre() {
       <p className="font-sans text-[clamp(13px,1.4vw,15px)] leading-[1.7] text-muted text-center max-w-[800px] mx-auto px-5">
         {"We're a team of researchers and engineers from robotics, computer vision, machine learning, and neuroscience. Our collective experience spans automated AI lab infrastructure at DeepMind, scaling work for state-of-the-art generative models like Gemini Diffusion, semiconductor and neuromorphic computing research at Stanford, and patented ML on the edge technologies."}
       </p>
+      <a
+        href="https://linkedin.com/in/krisluo"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="mt-10 inline-block font-mono text-xs font-bold tracking-[0.12em] uppercase text-background bg-accent px-7 py-3.5 rounded-lg transition-all duration-200 hover:bg-accent-hover hover:-translate-y-0.5 hover:shadow-[0_4px_20px_rgba(0,200,150,0.35)]"
+      >
+        Get in Touch with the CEO
+      </a>
     </section>
   );
 }
