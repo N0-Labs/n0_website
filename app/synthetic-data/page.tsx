@@ -34,10 +34,9 @@ const stats = [
 ];
 
 const capabilities = [
-  "Photorealistic environment rendering at any time of day or season",
-  "Sensor-accurate RGB, IR, depth, and lidar modalities",
+  "Sensor-accurate modeling (including distortion)",
   "Automatic bounding-box, segmentation, and keypoint annotations",
-  "Fully controllable weather — rain, fog, snow, dust storms",
+  "Fully controllable weather, and dynamic weather effects on sensor artifacts",
   "Adversarial edge-case generation on demand",
   "Export to COCO, YOLO, Pascal VOC, or custom schema",
 ];
@@ -133,9 +132,7 @@ export default function SyntheticDataPage() {
               What You Get
             </h2>
             <p className="font-mono text-sm leading-[1.8] text-muted max-w-[50ch]">
-              Every dataset is delivered with annotation files, scene metadata,
-              and a data card covering provenance, class distribution, and
-              recommended splits.
+              Access to a platform and engine that generates unlimited scenarios, with annotations.
             </p>
           </div>
           <ul className="flex flex-col gap-4">
