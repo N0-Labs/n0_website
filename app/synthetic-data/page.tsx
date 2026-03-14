@@ -49,16 +49,9 @@ export default function SyntheticDataPage() {
         <p className="font-mono text-xs tracking-[0.18em] uppercase text-accent mb-6">
           Product — Synthetic Data
         </p>
-        <h1 className="font-heading text-[clamp(48px,7vw,96px)] leading-[0.92] tracking-[0.03em] text-foreground mb-8 max-w-[16ch]">
-          Perception Training Data. Any Domain. No Field Work.
+        <h1 className="font-heading text-[clamp(48px,7vw,96px)] leading-[0.92] tracking-[0.03em] text-foreground mb-8 max-w-[18ch]">
+          Large dataset generation for any use case
         </h1>
-        <p className="font-mono text-[clamp(13px,1.4vw,15px)] leading-[1.8] text-muted max-w-[65ch]">
-          We generate photorealistic, fully-annotated training datasets from
-          simulation — delivering{" "}
-          <span className="text-foreground font-bold">proven sim-to-real</span>{" "}
-          performance gains without the cost, delay, or risk of real-world data
-          collection.
-        </p>
 
       </section>
 
