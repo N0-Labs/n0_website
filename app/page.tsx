@@ -1,45 +1,18 @@
-import { Hero } from "@/components/hero";
-import { AcceleratingAutonomy } from "@/components/accelerating-autonomy";
-import { WhoWeAre } from "@/components/who-we-are";
-import { Backers } from "@/components/backers";
-import { Contact } from "@/components/contact";
+import { ProductsNav } from "@/components/products-nav";
+import { PageIntro } from "@/components/page-intro";
+import { ProductsSection } from "@/components/products-section";
+import { CTABanner } from "@/components/cta-banner";
+import { DomainsSection } from "@/components/domains-section";
 
 export default function Home() {
   return (
-    <main className="min-h-screen">
-      {/* Hero Section */}
-      <div className="bg-background">
-        <div className="w-full mx-auto px-[max(16px,env(safe-area-inset-left))] md:max-w-[1200px] md:px-5">
-          <Hero />
-        </div>
-      </div>
-
-      {/* Accelerating Autonomy */}
-      <div className="bg-background">
-        <div className="w-full mx-auto px-[max(16px,env(safe-area-inset-left))] md:max-w-[1200px] md:px-5">
-          <AcceleratingAutonomy />
-        </div>
-      </div>
-
-      {/* Who We Are */}
-      <div className="bg-background">
-        <div className="w-full mx-auto px-[max(16px,env(safe-area-inset-left))] md:max-w-[1200px] md:px-5">
-          <WhoWeAre />
-        </div>
-      </div>
-
-      {/* Backers */}
-      <div className="bg-background">
-        <div className="w-full mx-auto px-[max(16px,env(safe-area-inset-left))] md:max-w-[1200px] md:px-5">
-          <Backers />
-        </div>
-      </div>
-
-      {/* Contact */}
-      <div className="bg-panel">
-        <div className="w-full mx-auto px-[max(16px,env(safe-area-inset-left))] md:max-w-[1200px] md:px-5">
-          <Contact />
-        </div>
+    <main className="min-h-screen bg-background-primary">
+      <div className="max-w-4xl mx-auto px-8 py-12">
+        <ProductsNav />
+        <PageIntro />
+        <ProductsSection />
+        <CTABanner />
+        <DomainsSection />
       </div>
     </main>
   );

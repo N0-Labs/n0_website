@@ -1,25 +1,24 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, IBM_Plex_Serif } from "next/font/google";
+import { IBM_Plex_Sans } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
-const ibmPlexSerif = IBM_Plex_Serif({
+const ibmPlexSans = IBM_Plex_Sans({
   subsets: ["latin"],
-  weight: ["500", "600", "700"],
-  variable: "--font-ibm-plex-serif",
+  weight: ["400", "500", "600"],
+  variable: "--font-ibm-plex-sans",
 });
 
 export const metadata: Metadata = {
-  title: "Null Labs",
+  title: "N0labs - Simulation and Testing for Autonomy",
   description:
-    "Null Labs — queryable physics & sensor data for intelligent systems.",
+    "N0labs gives autonomy engineering teams the simulation environment and synthetic data pipeline they need to build reliable perception systems.",
   icons: {
     icon: "/N0_final-256x256.png",
   },
 };
 
 export const viewport: Viewport = {
-  themeColor: "#000000",
+  themeColor: "#1B3A6B",
   width: "device-width",
   initialScale: 1,
   viewportFit: "cover",
@@ -31,7 +30,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${ibmPlexSerif.variable}`}>
+    <html lang="en" className={`${ibmPlexSans.variable}`}>
       <body className="font-sans">{children}</body>
     </html>
   );
