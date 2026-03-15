@@ -7,8 +7,8 @@ const partners = [
   { src: "/army_logo.png", alt: "U.S. Army" },
   { src: "/devcom-arl-logo.png", alt: "DEVCOM Army Research Laboratory" },
   { src: "/dod-logo.png", alt: "Department of Defense" },
-  { src: "/ow_logo.png", alt: "OW" },
-  { src: "/mara_logo.jpg", alt: "MARA" },
+  { src: "/ow_logo.png", alt: "OW", invertColor: true },
+  { src: "/mara_logo.jpg", alt: "MARA", invertColor: true },
 ];
 
 // Duplicate for seamless loop
@@ -46,7 +46,7 @@ export function PartnersSlider() {
                 alt={partner.alt}
                 width={partner.isLarge ? 180 : 140}
                 height={partner.isLarge ? 72 : 56}
-                className={`${partner.isLarge ? 'h-20' : 'h-14'} w-auto object-contain transition-all duration-300 grayscale hover:grayscale-0`}
+                className={`${partner.isLarge ? 'h-20' : 'h-14'} w-auto object-contain transition-all duration-300 ${partner.invertColor ? 'invert' : 'grayscale hover:grayscale-0'}`}
                 unoptimized
               />
             </div>
