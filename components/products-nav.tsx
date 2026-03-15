@@ -18,9 +18,6 @@ export function ProductsNav() {
         <a href="/research" className="text-sm text-text-secondary hover:text-text-primary transition">
           Research
         </a>
-        <span className="text-sm text-text-secondary cursor-pointer hover:text-text-primary transition">
-          Customers
-        </span>
         <button className="text-sm font-medium bg-brand text-white rounded px-[18px] py-2 cursor-pointer hover:opacity-90 transition">
           Request a demo
         </button>
