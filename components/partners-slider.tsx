@@ -7,7 +7,7 @@ const partners = [
   { src: "/army_logo.png", alt: "U.S. Army" },
   { src: "/devcom-arl-logo.png", alt: "DEVCOM Army Research Laboratory" },
   { src: "/dod-logo.png", alt: "Department of Defense" },
-  { src: "/ow_logo.png", alt: "OW", invertColor: true },
+  { src: "/overwatch-imaging-logo.png", alt: "Overwatch Imaging", invertColor: true },
   { src: "/mara_logo.jpg", alt: "MARA", invertColor: true },
 ];
 
