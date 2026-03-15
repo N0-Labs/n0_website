@@ -3,9 +3,6 @@
 import Image from "next/image";
 
 const partners = [
-  { src: "/yc_logo.png", alt: "Y Combinator" },
-  { src: "/ovo_ventures.png", alt: "OVO Ventures" },
-  { src: "/pdc.avif", alt: "Palm Drive Capital" },
   { src: "/nvidia_logo.png", alt: "NVIDIA" },
   { src: "/army_logo.png", alt: "U.S. Army" },
   { src: "/arl.png", alt: "Army Research Laboratory" },
@@ -21,7 +18,7 @@ export function PartnersSlider() {
   return (
     <section className="mb-14 border-t border-border-primary pt-10">
       <p className="text-xs font-semibold tracking-widest uppercase text-text-secondary mb-8">
-        Partners &amp; Backers
+        Partners
       </p>
 
       <div className="relative overflow-hidden">
