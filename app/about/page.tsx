@@ -27,7 +27,7 @@ export default function About() {
             <TeamMemberCard
               name="Kristopher Luo"
               role="CEO & Co-founder"
-              image="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1747817813738-LcVOXjjrF8DYG5DXFh1oEiHu8IIMRH.jpeg"
+              image="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1728868918596-s1SXN5oL8N5ANJGsb6CiokmCZa7l5B.jpeg"
               bio="Kristopher has spent multiple years developing vision-based edge products in both research and product environments. He has worked in industry automating vision-to-action pipelines for agriculture robotics, and deployed neural networks on edge including a patented system for child heat protection in vehicles. His expertise spans the full stack from model development to production deployment."
             />
             
@@ -36,7 +36,7 @@ export default function About() {
             <TeamMemberCard
               name="Niel Ok"
               role="CTO & Co-founder"
-              image="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1728868918596-s1SXN5oL8N5ANJGsb6CiokmCZa7l5B.jpeg"
+              image="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1747817813738-LcVOXjjrF8DYG5DXFh1oEiHu8IIMRH.jpeg"
               bio="Niel is the CTO and co-founder at N0labs. Previously, he led infrastructure at a DeepMind spinout working on automating AI research. He studied Electrical Engineering and conducted neuroscience theory research at Stanford, bringing deep technical expertise in systems design and machine learning infrastructure."
             />
           </div>
