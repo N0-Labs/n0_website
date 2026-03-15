@@ -3,7 +3,7 @@
 import Image from "next/image";
 
 const partners = [
-  { src: "/nvidia_logo.png", alt: "NVIDIA", isLarge: true },
+  { src: "/nvidia-inception-logo.png", alt: "NVIDIA Inception Program", isLarge: true },
   { src: "/army_logo.png", alt: "U.S. Army" },
   { src: "/devcom-arl-logo.png", alt: "DEVCOM Army Research Laboratory" },
   { src: "/dod-logo.png", alt: "Department of Defense" },
