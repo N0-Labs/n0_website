@@ -1,5 +1,3 @@
-import Image from 'next/image';
-
 interface TeamMemberProps {
   name: string;
   role: string;
@@ -12,12 +10,10 @@ export function TeamMemberCard({ name, role, bio, image }: TeamMemberProps) {
     <div className="flex flex-col md:flex-row gap-8 items-start">
       <div className="w-full md:w-1/3">
         <div className="relative aspect-square rounded-lg overflow-hidden bg-background-secondary">
-          <Image
+          <img
             src={image}
             alt={name}
-            fill
-            className="object-cover"
-            sizes="(max-width: 768px) 100vw, 33vw"
+            className="w-full h-full object-cover"
           />
         </div>
       </div>
