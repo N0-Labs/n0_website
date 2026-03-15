@@ -3,10 +3,10 @@
 import Image from "next/image";
 
 const partners = [
-  { src: "/nvidia_logo.png", alt: "NVIDIA" },
+  { src: "/nvidia_logo.png", alt: "NVIDIA", isLarge: true },
   { src: "/army_logo.png", alt: "U.S. Army" },
-  { src: "/arl.png", alt: "Army Research Laboratory" },
-  { src: "/Seal_of_the_Defense_Innovation_Unit.svg", alt: "Defense Innovation Unit" },
+  { src: "/devcom-arl-logo.png", alt: "DEVCOM Army Research Laboratory" },
+  { src: "/dod-logo.png", alt: "Department of Defense" },
   { src: "/ow_logo.png", alt: "OW" },
   { src: "/mara_logo.jpg", alt: "MARA" },
 ];
@@ -40,13 +40,13 @@ export function PartnersSlider() {
 
         <div className="flex gap-14 items-center animate-marquee w-max">
           {track.map((partner, i) => (
-            <div key={`${partner.alt}-${i}`} className="flex-shrink-0 flex items-center justify-center h-16">
+            <div key={`${partner.alt}-${i}`} className={`flex-shrink-0 flex items-center justify-center ${partner.isLarge ? 'h-20' : 'h-16'}`}>
               <Image
                 src={partner.src}
                 alt={partner.alt}
-                width={140}
-                height={56}
-                className="h-14 w-auto object-contain opacity-70 invert hover:opacity-100 transition-all duration-300"
+                width={partner.isLarge ? 180 : 140}
+                height={partner.isLarge ? 72 : 56}
+                className={`${partner.isLarge ? 'h-20' : 'h-14'} w-auto object-contain transition-all duration-300 grayscale hover:grayscale-0`}
                 unoptimized
               />
             </div>
