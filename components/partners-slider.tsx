@@ -40,13 +40,13 @@ export function PartnersSlider() {
 
         <div className="flex gap-14 items-center animate-marquee w-max">
           {track.map((partner, i) => (
-            <div key={`${partner.alt}-${i}`} className="flex-shrink-0 flex items-center justify-center h-10">
+            <div key={`${partner.alt}-${i}`} className="flex-shrink-0 flex items-center justify-center h-16">
               <Image
                 src={partner.src}
                 alt={partner.alt}
-                width={100}
-                height={40}
-                className="h-8 w-auto object-contain opacity-50 grayscale hover:opacity-80 hover:grayscale-0 transition-all duration-300"
+                width={140}
+                height={56}
+                className="h-14 w-auto object-contain opacity-70 invert hover:opacity-100 transition-all duration-300"
                 unoptimized
               />
             </div>
