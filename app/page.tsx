@@ -1,6 +1,7 @@
 import { ProductsNav } from "@/components/products-nav";
 import { PageIntro } from "@/components/page-intro";
 import { ProductsSection } from "@/components/products-section";
+import { PartnersSlider } from "@/components/partners-slider";
 import { CTABanner } from "@/components/cta-banner";
 import { DomainsSection } from "@/components/domains-section";
 
@@ -11,6 +12,7 @@ export default function Home() {
         <ProductsNav />
         <PageIntro />
         <ProductsSection />
+        <PartnersSlider />
         <CTABanner />
         <DomainsSection />
       </div>
