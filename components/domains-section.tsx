@@ -9,7 +9,6 @@ const domains = [
     description: "USV perception and obstacle detection across sea states, weather, and lighting conditions.",
     images: [
       { src: "/domain-maritime-1.jpg" },
-      { src: "/domain-maritime-2.jpg" },
     ],
   },
   {
