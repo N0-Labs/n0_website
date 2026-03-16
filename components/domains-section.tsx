@@ -8,8 +8,8 @@ const domains = [
     title: "Maritime autonomy",
     description: "USV perception and obstacle detection across sea states, weather, and lighting conditions.",
     images: [
-      { src: "/domain-maritime-1.jpg", caption: "EO sea-state detection — choppy conditions, vessel classification" },
-      { src: "/domain-maritime-2.jpg", caption: "Foggy maritime obstacle avoidance with bounding-box annotations" },
+      { src: "/domain-maritime-1.jpg" },
+      { src: "/domain-maritime-2.jpg" },
     ],
   },
   {
@@ -17,8 +17,8 @@ const domains = [
     title: "Aerial ISR",
     description: "UAS target detection and tracking in denied and degraded EO environments.",
     images: [
-      { src: "/domain-aerial-1.jpg", caption: "UAS EO ground-target tracking — haze and motion degradation" },
-      { src: "/domain-aerial-2.jpg", caption: "High-altitude ISR, atmospheric attenuation, multi-target annotations" },
+      { src: "/domain-aerial-1.jpg" },
+      { src: "/domain-aerial-2.jpg" },
     ],
   },
   {
@@ -26,9 +26,9 @@ const domains = [
     title: "Ground autonomy",
     description: "UGV navigation and perception testing across contested terrain and sensor occlusion scenarios.",
     images: [
-      { src: "/domain-ground-1.jpg", caption: "UGV off-road autonomous navigation with multi-object detection and tracking" },
-      { src: "/domain-ground-2.jpg", caption: "Dense forest autonomous navigation with terrain awareness and obstacle avoidance" },
-      { src: "/domain-ground-3.jpg", caption: "Degraded lighting conditions with target vehicle detection and thermal perception" },
+      { src: "/domain-ground-1.jpg" },
+      { src: "/domain-ground-2.jpg" },
+      { src: "/domain-ground-3.jpg" },
     ],
   },
   {
@@ -36,12 +36,12 @@ const domains = [
     title: "Counter UAS",
     description: "Autonomous threat detection and tracking of hostile unmanned aircraft systems in contested airspace.",
     images: [
-      { src: "/domain-counter-uas-1.jpg", caption: "Dense forest occlusion — detecting UAS in complex vegetation" },
-      { src: "/domain-counter-uas-2.jpg", caption: "Mountain terrain threat detection with clear-sky UAS identification" },
-      { src: "/domain-counter-uas-3.jpg", caption: "Long-range clear-sky single target detection and tracking" },
-      { src: "/domain-counter-uas-4.jpg", caption: "Multiple UAS threat identification in clear conditions" },
-      { src: "/domain-counter-uas-5.jpg", caption: "Multi-target simultaneous threat tracking across airspace" },
-      { src: "/domain-counter-uas-6.jpg", caption: "Near-field high-fidelity threat vehicle identification and tracking" },
+      { src: "/domain-counter-uas-1.jpg" },
+      { src: "/domain-counter-uas-2.jpg" },
+      { src: "/domain-counter-uas-3.jpg" },
+      { src: "/domain-counter-uas-4.jpg" },
+      { src: "/domain-counter-uas-5.jpg" },
+      { src: "/domain-counter-uas-6.jpg" },
     ],
   },
 ];
@@ -99,7 +99,7 @@ export function DomainsSection() {
           <div className="relative aspect-video bg-black">
             <img
               src={active.images[activeSlide].src}
-              alt={active.images[activeSlide].caption}
+              alt="domain example"
               className="w-full h-full object-cover"
             />
             {/* Slide counter */}
@@ -126,8 +126,7 @@ export function DomainsSection() {
               </>
             )}
           </div>
-          <div className="px-5 py-3 flex items-center justify-between">
-            <p className="text-sm text-text-secondary">{active.images[activeSlide].caption}</p>
+          <div className="px-5 py-3 flex items-center justify-end">
             {/* Dot indicators */}
             <div className="flex gap-1.5">
               {active.images.map((_, i) => (
