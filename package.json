@@ -9,18 +9,19 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "clsx": "^2",
     "next": "^16",
     "react": "^19",
     "react-dom": "^19",
-    "clsx": "^2",
+    "resend": "^6.9.3",
     "tailwind-merge": "^2"
   },
   "devDependencies": {
+    "@tailwindcss/postcss": "^4",
     "@types/node": "^22",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "typescript": "^5",
     "tailwindcss": "^4",
-    "@tailwindcss/postcss": "^4"
+    "typescript": "^5"
   }
 }

@@ -6,10 +6,38 @@ import { ProductsNav } from "@/components/products-nav";
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
   const [platformType, setPlatformType] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    setSubmitted(true);
+    setLoading(true);
+    setError("");
+
+    const form = e.currentTarget;
+    const data = {
+      company: (form.elements.namedItem("company") as HTMLInputElement).value,
+      domain: platformType,
+      domainOther: platformType === "other"
+        ? (form.elements.namedItem("domainOther") as HTMLInputElement)?.value
+        : "",
+      role: (form.elements.namedItem("role") as HTMLSelectElement).value,
+      email: (form.elements.namedItem("email") as HTMLInputElement).value,
+      info: (form.elements.namedItem("info") as HTMLTextAreaElement).value,
+    };
+
+    const res = await fetch("/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    });
+
+    if (res.ok) {
+      setSubmitted(true);
+    } else {
+      setError("Something went wrong. Please try again or email us directly.");
+    }
+    setLoading(false);
   }
 
   return (
@@ -38,6 +66,7 @@ export default function Contact() {
                   Company Name <span className="text-brand">*</span>
                 </label>
                 <input
+                  name="company"
                   type="text"
                   required
                   placeholder="Null Labs"
@@ -51,6 +80,7 @@ export default function Contact() {
                   Domain <span className="text-brand">*</span>
                 </label>
                 <select
+                  name="domain"
                   required
                   value={platformType}
                   onChange={(e) => setPlatformType(e.target.value)}
@@ -69,13 +99,14 @@ export default function Contact() {
                 </select>
               </div>
 
-              {/* Other platform description */}
+              {/* Other domain description */}
               {platformType === "other" && (
                 <div className="flex flex-col gap-1.5">
                   <label className="text-sm font-medium text-text-primary">
                     Describe your domain <span className="text-brand">*</span>
                   </label>
                   <input
+                    name="domainOther"
                     type="text"
                     required
                     placeholder="e.g. Underwater vehicle, space robotics..."
@@ -90,6 +121,7 @@ export default function Contact() {
                   Your Role <span className="text-brand">*</span>
                 </label>
                 <select
+                  name="role"
                   required
                   defaultValue=""
                   className="border border-border-tertiary rounded-lg px-4 py-2.5 text-sm text-text-primary bg-background-primary focus:outline-none focus:ring-1 focus:ring-brand focus:border-brand transition appearance-none"
@@ -111,6 +143,7 @@ export default function Contact() {
                   Email <span className="text-brand">*</span>
                 </label>
                 <input
+                  name="email"
                   type="email"
                   required
                   placeholder="you@company.com"
@@ -125,17 +158,23 @@ export default function Contact() {
                   <span className="text-text-secondary font-normal">(Optional)</span>
                 </label>
                 <textarea
+                  name="info"
                   rows={4}
                   placeholder="Tell us about your project, timeline, or any specific requirements..."
                   className="border border-border-tertiary rounded-lg px-4 py-2.5 text-sm text-text-primary bg-background-primary placeholder:text-text-secondary focus:outline-none focus:ring-1 focus:ring-brand focus:border-brand transition resize-none"
                 />
               </div>
 
+              {error && (
+                <p className="text-sm text-red-500">{error}</p>
+              )}
+
               <button
                 type="submit"
-                className="mt-1 bg-brand text-white text-sm font-medium rounded-lg px-6 py-3 hover:opacity-90 transition self-start"
+                disabled={loading}
+                className="mt-1 bg-brand text-white text-sm font-medium rounded-lg px-6 py-3 hover:opacity-90 transition self-start disabled:opacity-50"
               >
-                Submit
+                {loading ? "Sending..." : "Submit"}
               </button>
             </form>
           )}
