@@ -36,8 +36,12 @@ const domains = [
     title: "Counter UAS",
     description: "Autonomous threat detection and tracking of hostile unmanned aircraft systems in contested airspace.",
     images: [
-      { src: "/domain-counter-uas-1.jpg", caption: "Counter-UAS EO detection — tracking hostile drone with real-time bounding boxes" },
-      { src: "/domain-counter-uas-2.jpg", caption: "Multi-target UAS tracking with atmospheric degradation and sensor noise" },
+      { src: "/domain-counter-uas-1.jpg", caption: "Dense forest occlusion — detecting UAS in complex vegetation" },
+      { src: "/domain-counter-uas-2.jpg", caption: "Mountain terrain threat detection with clear-sky UAS identification" },
+      { src: "/domain-counter-uas-3.jpg", caption: "Long-range clear-sky single target detection and tracking" },
+      { src: "/domain-counter-uas-4.jpg", caption: "Multiple UAS threat identification in clear conditions" },
+      { src: "/domain-counter-uas-5.jpg", caption: "Multi-target simultaneous threat tracking across airspace" },
+      { src: "/domain-counter-uas-6.jpg", caption: "Near-field high-fidelity threat vehicle identification and tracking" },
     ],
   },
 ];
