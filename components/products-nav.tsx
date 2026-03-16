@@ -18,10 +18,6 @@ export function ProductsNav() {
           <span>Null Labs</span>
         </Link>
         <div className="flex gap-8 items-center">
-          <Link href="/about" className="text-sm text-text-secondary hover:text-text-primary transition">
-            Company
-          </Link>
-
           {/* Products dropdown */}
           <div
             className="relative"
@@ -76,6 +72,9 @@ export function ProductsNav() {
             )}
           </div>
 
+          <Link href="/about" className="text-sm text-text-secondary hover:text-text-primary transition">
+            Company
+          </Link>
           <Link href="/research" className="text-sm text-text-secondary hover:text-text-primary transition">
             Research
           </Link>
