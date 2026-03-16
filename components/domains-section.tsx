@@ -24,7 +24,8 @@ const domains = [
     icon: "○",
     title: "Ground autonomy",
     description: "UGV navigation and perception testing across contested terrain and sensor occlusion scenarios.",
-    video: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/rgb-Intnc5D7OiMGzVjrRbEZrCo0OHtS2T.mp4",
+    video: "/domain-ground-video.mp4",
+    poster: "/domain-ground-1.jpg",
     images: [],
   },
   {
@@ -96,11 +97,13 @@ export function DomainsSection() {
             {active.video ? (
               <video
                 src={active.video}
+                poster={active.poster}
                 className="w-full h-full object-cover"
                 autoPlay
                 loop
                 muted
                 playsInline
+                preload="auto"
               />
             ) : (
               <img
