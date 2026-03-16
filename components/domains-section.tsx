@@ -24,11 +24,8 @@ const domains = [
     icon: "○",
     title: "Ground autonomy",
     description: "UGV navigation and perception testing across contested terrain and sensor occlusion scenarios.",
-    images: [
-      { src: "/domain-ground-1.jpg" },
-      { src: "/domain-ground-2.jpg" },
-      { src: "/domain-ground-3.jpg" },
-    ],
+    video: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/rgb-Intnc5D7OiMGzVjrRbEZrCo0OHtS2T.mp4",
+    images: [],
   },
   {
     icon: "◆",
@@ -96,17 +93,30 @@ export function DomainsSection() {
       {active && (
         <div className="mt-4 border border-border-tertiary rounded-lg overflow-hidden bg-background-secondary">
           <div className="relative aspect-video bg-black">
-            <img
-              src={active.images[activeSlide].src}
-              alt="domain example"
-              className="w-full h-full object-cover"
-            />
-            {/* Slide counter */}
-            <div className="absolute top-3 right-3 bg-black/50 text-white text-xs px-2 py-1 rounded">
-              {activeSlide + 1} / {active.images.length}
-            </div>
+            {active.video ? (
+              <video
+                src={active.video}
+                className="w-full h-full object-cover"
+                autoPlay
+                loop
+                muted
+                playsInline
+              />
+            ) : (
+              <img
+                src={active.images[activeSlide].src}
+                alt="domain example"
+                className="w-full h-full object-cover"
+              />
+            )}
+            {/* Slide counter - only show for images */}
+            {!active.video && active.images.length > 0 && (
+              <div className="absolute top-3 right-3 bg-black/50 text-white text-xs px-2 py-1 rounded">
+                {activeSlide + 1} / {active.images.length}
+              </div>
+            )}
             {/* Prev / Next */}
-            {active.images.length > 1 && (
+            {!active.video && active.images.length > 1 && (
               <>
                 <button
                   onClick={() => setActiveSlide((s) => (s - 1 + active.images.length) % active.images.length)}
@@ -125,19 +135,21 @@ export function DomainsSection() {
               </>
             )}
           </div>
-          <div className="px-5 py-3 flex items-center justify-end">
-            {/* Dot indicators */}
-            <div className="flex gap-1.5">
-              {active.images.map((_, i) => (
-                <button
-                  key={i}
-                  onClick={() => setActiveSlide(i)}
-                  className={`w-1.5 h-1.5 rounded-full transition-colors ${i === activeSlide ? "bg-brand" : "bg-border-tertiary"}`}
-                  aria-label={`Go to slide ${i + 1}`}
-                />
-              ))}
+          {/* Dot indicators - only show for multiple images */}
+          {!active.video && active.images.length > 1 && (
+            <div className="px-5 py-3 flex items-center justify-end">
+              <div className="flex gap-1.5">
+                {active.images.map((_, i) => (
+                  <button
+                    key={i}
+                    onClick={() => setActiveSlide(i)}
+                    className={`w-1.5 h-1.5 rounded-full transition-colors ${i === activeSlide ? "bg-brand" : "bg-border-tertiary"}`}
+                    aria-label={`Go to slide ${i + 1}`}
+                  />
+                ))}
+              </div>
             </div>
-          </div>
+          )}
         </div>
       )}
     </section>
