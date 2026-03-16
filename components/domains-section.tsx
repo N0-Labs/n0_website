@@ -30,6 +30,15 @@ const domains = [
       { src: "/domain-ground-2.jpg", caption: "Night EO simulation with sensor noise and dense vegetation" },
     ],
   },
+  {
+    icon: "◆",
+    title: "Counter UAS",
+    description: "Autonomous threat detection and tracking of hostile unmanned aircraft systems in contested airspace.",
+    images: [
+      { src: "/domain-counter-uas-1.jpg", caption: "Counter-UAS EO detection — tracking hostile drone with real-time bounding boxes" },
+      { src: "/domain-counter-uas-2.jpg", caption: "Multi-target UAS tracking with atmospheric degradation and sensor noise" },
+    ],
+  },
 ];
 
 export function DomainsSection() {
@@ -52,7 +61,7 @@ export function DomainsSection() {
       <div className="text-xs font-semibold tracking-widest uppercase text-brand mb-6">
         Supported domains
       </div>
-      <div className="grid grid-cols-3 gap-4">
+      <div className="grid grid-cols-2 gap-4">
         {domains.map((domain, index) => (
           <button
             key={index}
