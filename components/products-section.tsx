@@ -105,8 +105,8 @@ export function ProductsSection() {
               <span>CI/CD integration for continuous validation</span>
             </li>
           </ul>
-          <a href="/?openDomain=0#domains" className="text-sm font-medium text-brand cursor-pointer hover:opacity-70 transition">
-            See examples →
+          <a href="/sitl-testing" className="text-sm font-medium text-brand cursor-pointer hover:opacity-70 transition">
+            Learn more →
           </a>
         </div>
       </div>

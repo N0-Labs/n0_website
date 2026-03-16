@@ -3,13 +3,13 @@ export function PageIntro() {
     <div className="mb-14 pb-12 border-b border-border-tertiary flex gap-16 items-start">
       <div className="flex-1">
         <div className="text-xs font-semibold tracking-widest uppercase text-brand mb-4">
-          N0labs Platform
+          Null Labs Platform
         </div>
         <h1 className="text-4xl font-semibold leading-tight tracking-tight text-text-primary mb-4">
           Simulation and testing infrastructure for autonomy programs
         </h1>
         <p className="text-base text-text-secondary leading-relaxed">
-          N0labs gives autonomy engineering teams the simulation environment and synthetic data pipeline they need to build reliable perception systems — without waiting for real-world data collection.
+          Null Labs gives autonomy engineering teams the simulation environment and synthetic data pipeline they need to build reliable perception systems — without waiting for real-world data collection and reducing time-intensive field testing.
         </p>
       </div>
       <div className="flex-1">

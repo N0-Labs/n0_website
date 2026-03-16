@@ -13,7 +13,7 @@ export default function About() {
             Building the future of autonomy
           </h1>
           <p className="text-lg text-text-secondary leading-relaxed max-w-2xl">
-            At N0labs, we're a team of robotics and AI experts dedicated to providing the simulation environment and synthetic data pipeline that autonomy engineering teams need to build reliable perception systems.
+            At Null Labs, we're a team of robotics and AI experts dedicated to providing an open environment simulation that autonomy teams can use to accelerate the development and testing of robots that can perceive the world around them and act.
           </p>
         </section>
 

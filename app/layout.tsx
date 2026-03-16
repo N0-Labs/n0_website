@@ -9,9 +9,9 @@ const ibmPlexSans = IBM_Plex_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "N0labs - Simulation and Testing for Autonomy",
+  title: "Null Labs - Simulation and Testing for Autonomy",
   description:
-    "N0labs gives autonomy engineering teams the simulation environment and synthetic data pipeline they need to build reliable perception systems.",
+    "Null Labs gives autonomy engineering teams the simulation environment and synthetic data pipeline they need to build reliable perception systems.",
   icons: {
     icon: "/N0_final-256x256.png",
   },
