@@ -17,7 +17,6 @@ const domains = [
     title: "Aerial ISR",
     description: "UAS target detection and tracking in denied and degraded EO environments.",
     video: "/rgb - Trim.mp4",
-    poster: "/domain-aerial-1.jpg",
     images: [],
   },
   {
@@ -25,7 +24,6 @@ const domains = [
     title: "Ground autonomy",
     description: "UGV navigation and perception testing across contested terrain and sensor occlusion scenarios.",
     video: "/ugv.mp4",
-    poster: "/domain-ground-1.jpg",
     images: [],
   },
   {
