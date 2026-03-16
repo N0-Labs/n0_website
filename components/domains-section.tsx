@@ -1,30 +1,30 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useSearchParams } from "next/navigation";
 
 const domains = [
   {
     icon: "◈",
     title: "Maritime autonomy",
     description: "USV perception and obstacle detection across sea states, weather, and lighting conditions.",
-    images: [
-      { src: "/domain-maritime-1.jpg" },
-    ],
+    video: "/domain-maritime-video.mp4",
+    poster: "/domain-maritime-1.jpg",
+    images: [],
   },
   {
     icon: "◇",
     title: "Aerial ISR",
     description: "UAS target detection and tracking in denied and degraded EO environments.",
-    images: [
-      { src: "/domain-aerial-1.jpg" },
-      { src: "/domain-aerial-2.jpg" },
-    ],
+    video: "/rgb - Trim.mp4",
+    poster: "/domain-aerial-1.jpg",
+    images: [],
   },
   {
     icon: "○",
     title: "Ground autonomy",
     description: "UGV navigation and perception testing across contested terrain and sensor occlusion scenarios.",
-    video: "/domain-ground-video.mp4",
+    video: "/ugv.mp4",
     poster: "/domain-ground-1.jpg",
     images: [],
   },
@@ -46,6 +46,18 @@ const domains = [
 export function DomainsSection() {
   const [activeDomain, setActiveDomain] = useState<number | null>(null);
   const [activeSlide, setActiveSlide] = useState(0);
+  const searchParams = useSearchParams();
+
+  useEffect(() => {
+    const openDomain = searchParams.get("openDomain");
+    if (openDomain !== null) {
+      const index = parseInt(openDomain, 10);
+      if (!isNaN(index) && index >= 0 && index < domains.length) {
+        setActiveDomain(index);
+        document.getElementById("domains")?.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }, [searchParams]);
 
   function handleDomainClick(index: number) {
     if (activeDomain === index) {
@@ -59,7 +71,7 @@ export function DomainsSection() {
   const active = activeDomain !== null ? domains[activeDomain] : null;
 
   return (
-    <section>
+    <section id="domains">
       <div className="text-xs font-semibold tracking-widest uppercase text-brand mb-6">
         Supported domains
       </div>

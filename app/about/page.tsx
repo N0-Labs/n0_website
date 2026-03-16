@@ -4,7 +4,7 @@ import { TeamMemberCard } from "@/components/team-member-card";
 export default function About() {
   return (
     <main className="min-h-screen bg-background-primary">
-      <div className="max-w-4xl mx-auto px-8 py-12">
+      <div className="max-w-4xl mx-auto px-8 pt-24 pb-12">
         <ProductsNav />
         
         {/* Header */}

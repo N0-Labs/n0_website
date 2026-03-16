@@ -75,7 +75,7 @@ export function ProductsSection() {
               <span>Drop-in integration with existing training pipelines</span>
             </li>
           </ul>
-          <a href="#" className="text-sm font-medium text-brand cursor-pointer hover:opacity-70 transition">
+          <a href="/synthetic-data" className="text-sm font-medium text-brand cursor-pointer hover:opacity-70 transition">
             Learn more →
           </a>
         </div>
@@ -105,8 +105,8 @@ export function ProductsSection() {
               <span>CI/CD integration for continuous validation</span>
             </li>
           </ul>
-          <a href="#" className="text-sm font-medium text-brand cursor-pointer hover:opacity-70 transition">
-            Join waitlist →
+          <a href="/?openDomain=0#domains" className="text-sm font-medium text-brand cursor-pointer hover:opacity-70 transition">
+            See examples →
           </a>
         </div>
       </div>

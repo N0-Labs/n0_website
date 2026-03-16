@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export function CTABanner() {
   return (
     <div className="bg-background-secondary rounded-xl p-9 flex items-center justify-between gap-8 mb-14">
@@ -10,9 +12,9 @@ export function CTABanner() {
         </p>
       </div>
       <div className="flex gap-2.5 flex-shrink-0">
-        <button className="text-sm font-medium bg-brand text-white rounded px-5 py-2.5 cursor-pointer hover:opacity-90 transition whitespace-nowrap">
+        <Link href="/contact" className="text-sm font-medium bg-brand text-white rounded px-5 py-2.5 cursor-pointer hover:opacity-90 transition whitespace-nowrap">
           Request a demo
-        </button>
+        </Link>
         <button className="text-sm font-medium text-text-primary border border-border-primary rounded px-5 py-2.5 cursor-pointer hover:bg-background-primary transition bg-background-primary whitespace-nowrap">
           View docs
         </button>
