@@ -13,7 +13,7 @@ export function ProductsSection() {
               Sensor Simulation &amp; SITL Testing
             </h2>
             <p className="text-sm text-white/75 leading-relaxed max-w-2xl">
-              Photorealistic EO/IR simulation environments for software-in-the-loop testing. Validate your autonomy stack against degraded conditions, edge cases, and adversarial scenarios before hardware integration.
+              Photorealistic EO simulation environments for software-in-the-loop testing. Validate your autonomy stack against degraded conditions, edge cases, and adversarial scenarios before hardware integration.
             </p>
           </div>
           <div className="bg-white/15 text-white text-xs font-semibold tracking-widest uppercase px-2.5 py-1 rounded whitespace-nowrap flex-shrink-0 mt-0.5">
@@ -26,7 +26,7 @@ export function ProductsSection() {
               Sensor fidelity
             </h4>
             <p className="text-sm text-text-secondary leading-relaxed">
-              Physics-accurate EO/IR rendering with real-world degradation — atmospheric haze, sensor noise, motion blur, and lighting variation.
+              Physics-accurate EO rendering with real-world degradation — atmospheric haze, sensor noise, motion blur, and lighting variation.
             </p>
           </div>
           <div>
@@ -64,7 +64,7 @@ export function ProductsSection() {
           <ul className="flex flex-col gap-1.5 mb-6">
             <li className="text-sm text-text-secondary leading-normal flex items-start">
               <span className="inline-block w-1 h-0.5 bg-text-secondary mr-3.5 mt-2 flex-shrink-0" />
-              <span>EO/IR imagery with automatic annotation</span>
+              <span>EO imagery with automatic annotation</span>
             </li>
             <li className="text-sm text-text-secondary leading-normal flex items-start">
               <span className="inline-block w-1 h-0.5 bg-text-secondary mr-3.5 mt-2 flex-shrink-0" />

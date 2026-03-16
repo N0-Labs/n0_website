@@ -8,7 +8,7 @@ export function DomainsSection() {
     {
       icon: "◇",
       title: "Aerial ISR",
-      description: "UAS target detection and tracking in denied and degraded EO/IR environments.",
+      description: "UAS target detection and tracking in denied and degraded EO environments.",
     },
     {
       icon: "○",

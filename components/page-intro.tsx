@@ -24,7 +24,7 @@ export function PageIntro() {
           </div>
           <div className="bg-background-secondary rounded-lg p-4">
             <div className="text-2xl font-semibold text-text-primary tracking-tight mb-1">
-              EO/IR
+              EO
             </div>
             <p className="text-xs text-text-secondary leading-relaxed">
               physics-accurate sensor simulation
@@ -40,7 +40,7 @@ export function PageIntro() {
           </div>
           <div className="bg-background-secondary rounded-lg p-4">
             <div className="text-2xl font-semibold text-text-primary tracking-tight mb-1">
-              DoD
+              DoW
             </div>
             <p className="text-xs text-text-secondary leading-relaxed">
               built for defense and maritime autonomy programs
