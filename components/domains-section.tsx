@@ -26,8 +26,9 @@ const domains = [
     title: "Ground autonomy",
     description: "UGV navigation and perception testing across contested terrain and sensor occlusion scenarios.",
     images: [
-      { src: "/domain-ground-1.jpg", caption: "UGV off-road obstacle detection — dust, occlusion, rough terrain" },
-      { src: "/domain-ground-2.jpg", caption: "Night EO simulation with sensor noise and dense vegetation" },
+      { src: "/domain-ground-1.jpg", caption: "UGV off-road autonomous navigation with multi-object detection and tracking" },
+      { src: "/domain-ground-2.jpg", caption: "Dense forest autonomous navigation with terrain awareness and obstacle avoidance" },
+      { src: "/domain-ground-3.jpg", caption: "Degraded lighting conditions with target vehicle detection and thermal perception" },
     ],
   },
   {
