@@ -83,7 +83,7 @@ export function ProductsSection() {
         {/* Card 2 */}
         <div className="border border-border-tertiary rounded-xl p-7 bg-background-primary">
           <span className="inline-block text-xs font-semibold tracking-widest uppercase px-2.5 py-1 rounded mb-4 bg-amber-100 text-accent-amber">
-            Coming soon
+            SITL Testing
           </span>
           <h3 className="text-base font-semibold text-text-primary mb-2 tracking-tight">
             Autonomy validation suite
