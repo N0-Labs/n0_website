@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import { ProductsNav } from "@/components/products-nav";
 import { PageIntro } from "@/components/page-intro";
 import { ProductsSection } from "@/components/products-section";
@@ -14,7 +15,9 @@ export default function Home() {
         <ProductsSection />
         <PartnersSlider />
         <CTABanner />
-        <DomainsSection />
+        <Suspense>
+          <DomainsSection />
+        </Suspense>
       </div>
     </main>
   );
