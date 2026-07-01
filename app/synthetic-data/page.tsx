@@ -1,5 +1,4 @@
 import { ProductsNav } from "@/components/products-nav";
-import { PauseableVideo } from "@/components/pauseable-video";
 
 export default function SyntheticData() {
   return (
@@ -37,9 +36,6 @@ export default function SyntheticData() {
                 <p className="text-sm text-text-secondary leading-relaxed">
                   A visual interface for composing simulation environments and time series scenarios. Place assets, configure sensor parameters, and export annotated imagery — no code required.
                 </p>
-              </div>
-              <div className="bg-black">
-                <PauseableVideo src="/new usv workflow(1).mp4" />
               </div>
             </div>
 
