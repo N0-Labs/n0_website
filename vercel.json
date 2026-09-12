@@ -1,3 +1,12 @@
 {
-  "framework": "nextjs"
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "trailingSlash": false,
+  "rewrites": [
+    { "source": "/products", "destination": "/products.html" },
+    { "source": "/sensor-simulation", "destination": "/sensor-simulation.html" },
+    { "source": "/synthetic-data", "destination": "/synthetic-data.html" },
+    { "source": "/sitl-testing", "destination": "/sitl-testing.html" },
+    { "source": "/company", "destination": "/company.html" },
+    { "source": "/research", "destination": "/research.html" }
+  ]
 }

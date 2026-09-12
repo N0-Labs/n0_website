@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <title>Synthetic Data — Null Labs</title>
+    <link rel="icon" href="assets/images/N0_final-256x256.png" type="image/png" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header" data-site-header></header>
+
+    <main class="product-detail">
+      <section class="product-detail-hero">
+        <a class="product-back" href="products.html"><span aria-hidden="true">←</span> Back to products</a>
+        <h1>Training data at simulation speed</h1>
+        <p>
+          Generate fully annotated EO imagery at scale — across any domain, any condition — without a single
+          real-world collection mission.
+        </p>
+      </section>
+
+      <div class="product-detail-media">
+        <img src="assets/images/domain-counter-uas-1.webp" alt="Synthetic forest training environment" width="1280" height="720" decoding="async" fetchpriority="high" />
+      </div>
+
+      <section class="product-content-section">
+        <div class="product-section-heading">
+          <h2>Generation Modes</h2>
+          <p>Build individual scenarios visually or generate high-variance datasets programmatically.</p>
+        </div>
+
+        <div class="generation-modes">
+          <article class="generation-mode">
+            <span>Mode 1</span>
+            <h3>Scene Builder</h3>
+            <p>
+              A visual interface for composing simulation environments and time series scenarios. Place assets,
+              configure sensor parameters, and export annotated imagery — no code required.
+            </p>
+          </article>
+
+          <article class="generation-mode">
+            <span>Mode 2</span>
+            <h3>Procedural Static Data Generation</h3>
+            <p>
+              A code-first pipeline for large-scale dataset generation with maximum randomization. Define
+              distributions over scene parameters — asset placement, lighting, weather, sensor noise,
+              backgrounds — and sample thousands of labeled images programmatically.
+            </p>
+
+            <div class="product-feature-grid product-feature-grid--three">
+              <article>
+                <h3>Fully Parameterized</h3>
+                <p>
+                  Every scene variable — asset pose, scale, occlusion, lighting angle, atmospheric conditions —
+                  is configurable as a distribution.
+                </p>
+              </article>
+              <article>
+                <h3>Massive Scale</h3>
+                <p>
+                  Run headless across cloud infrastructure. Generate orders of magnitude more data than the scene
+                  builder with a single script.
+                </p>
+              </article>
+              <article>
+                <h3>Higher Variance</h3>
+                <p>
+                  Wider randomization ranges and combinatorial sampling cover edge cases the scene builder's
+                  manual workflow can't efficiently reach.
+                </p>
+              </article>
+            </div>
+
+            <figure class="product-code-example">
+              <figcaption>Procedural dataset generation with the Python SDK</figcaption>
+              <pre class="product-code" aria-label="Procedural generation example"><code><span class="syntax-keyword">from</span> <span class="syntax-module">nulllabs</span> <span class="syntax-keyword">import</span> <span class="syntax-type">SceneGenerator</span>
+
+<span class="syntax-variable">gen</span> = <span class="syntax-type">SceneGenerator</span>(<span class="syntax-variable">domain</span>=<span class="syntax-string">"maritime"</span>)
+<span class="syntax-variable">gen</span>.<span class="syntax-function">randomize</span>(
+  <span class="syntax-variable">weather</span>=[<span class="syntax-string">"clear"</span>, <span class="syntax-string">"overcast"</span>, <span class="syntax-string">"fog"</span>],
+  <span class="syntax-variable">n_assets</span>=(<span class="syntax-number">1</span>, <span class="syntax-number">8</span>),
+  <span class="syntax-variable">sensor_resolution</span>=[<span class="syntax-string">"1080p"</span>, <span class="syntax-string">"4K"</span>],
+)
+<span class="syntax-variable">gen</span>.<span class="syntax-function">export</span>(<span class="syntax-variable">n</span>=<span class="syntax-number">10_000</span>, <span class="syntax-variable">output</span>=<span class="syntax-string">"./dataset"</span>)</code></pre>
+            </figure>
+
+          </article>
+        </div>
+
+        <div class="generation-statement" aria-label="10,000 labeled images in 20 minutes in any domain">
+          <div><strong>10,000</strong><span>Labeled images</span></div>
+          <em>in</em>
+          <div><strong>20 min</strong><span>In any domain</span></div>
+        </div>
+      </section>
+
+      <section class="product-content-section">
+        <div class="product-section-heading">
+          <div>
+            <h2>Asset Pipeline</h2>
+            <h3>3D Neural Reconstruction</h3>
+          </div>
+          <p>
+            Any real-world asset can be added to our simulation database. We convert video or photo captures into
+            high-fidelity 3D models — no manual modeling required.
+          </p>
+        </div>
+        <div class="product-feature-grid product-feature-grid--three">
+          <article>
+            <h3>Capture</h3>
+            <p>Photograph or video an asset from multiple angles. Standard camera hardware is sufficient.</p>
+          </article>
+          <article>
+            <h3>Reconstruct</h3>
+            <p>Our neural reconstruction pipeline produces a detailed 3D model with accurate geometry and appearance.</p>
+          </article>
+          <article>
+            <h3>Deploy</h3>
+            <p>
+              Assets are added to the simulation database and immediately available for synthetic data
+              generation across all domains.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="product-content-section">
+        <div class="product-section-heading">
+          <h2>Domains</h2>
+          <p>Generate data across the operational environments your perception system must understand.</p>
+        </div>
+        <div class="product-domain-grid">
+          <button class="product-domain-card" type="button" data-domain="ground" aria-haspopup="dialog">
+            <span class="product-domain-copy">
+              <span class="product-domain-name">Ground autonomy</span>
+              <span class="product-domain-description">Urban terrain, open desert, forested environments with configurable occlusion and lighting.</span>
+            </span>
+            <span class="product-domain-action"><span class="product-domain-action-label">View</span> <span aria-hidden="true">→</span></span>
+          </button>
+          <button class="product-domain-card" type="button" data-domain="maritime" aria-haspopup="dialog">
+            <span class="product-domain-copy">
+              <span class="product-domain-name">Maritime autonomy</span>
+              <span class="product-domain-description">Open water, littoral zones, sea state variation, and weather-driven visibility degradation.</span>
+            </span>
+            <span class="product-domain-action"><span class="product-domain-action-label">View</span> <span aria-hidden="true">→</span></span>
+          </button>
+          <button class="product-domain-card" type="button" data-domain="aerial" aria-haspopup="dialog">
+            <span class="product-domain-copy">
+              <span class="product-domain-name">Aerial ISR</span>
+              <span class="product-domain-description">Nadir and oblique views across altitudes, with atmospheric haze and sensor noise profiles.</span>
+            </span>
+            <span class="product-domain-action"><span class="product-domain-action-label">View</span> <span aria-hidden="true">→</span></span>
+          </button>
+          <button class="product-domain-card" type="button" data-domain="counter-uas" aria-haspopup="dialog">
+            <span class="product-domain-copy">
+              <span class="product-domain-name">Counter UAS</span>
+              <span class="product-domain-description">Small UAS signatures against cluttered sky backgrounds at a range of aspect angles and ranges.</span>
+            </span>
+            <span class="product-domain-action"><span class="product-domain-action-label">View</span> <span aria-hidden="true">→</span></span>
+          </button>
+        </div>
+      </section>
+
+      <section class="product-detail-cta">
+        <h2>Train beyond collected data</h2>
+        <a class="etched-button" data-demo-link>Request a demo</a>
+      </section>
+    </main>
+
+    <dialog class="media-dialog" data-domain-dialog>
+      <div class="dialog-header">
+        <h2 data-dialog-title></h2>
+        <button type="button" data-dialog-close aria-label="Close examples">Close</button>
+      </div>
+      <div class="dialog-media" data-dialog-media></div>
+    </dialog>
+
+    <footer data-site-footer></footer>
+  </body>
+</html>

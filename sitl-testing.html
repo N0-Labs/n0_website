@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <title>SITL Testing — Null Labs</title>
+    <link rel="icon" href="assets/images/N0_final-256x256.png" type="image/png" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header" data-site-header></header>
+
+    <main class="product-detail product-detail--sitl">
+      <section class="product-detail-hero">
+        <a class="product-back" href="products.html"><span aria-hidden="true">←</span> Back to products</a>
+        <h1>Software-in-the-loop simulation</h1>
+        <p>
+          Run your autonomy stack against photorealistic simulated sensor feeds in real time before a single
+          hour of field testing.
+        </p>
+      </section>
+
+      <div class="product-detail-media">
+        <video src="assets/videos/ground-autonomy.mp4" poster="assets/images/ground-autonomy-poster.webp" autoplay muted loop playsinline preload="metadata"></video>
+      </div>
+
+      <div class="product-stats product-stats--two" aria-label="SITL performance">
+        <div><strong>20 fps</strong><span>Real-time SITL simulation</span></div>
+        <div><strong>SITL</strong><span>Closed-loop deployment</span></div>
+      </div>
+
+      <section class="product-content-section">
+        <div class="product-section-heading">
+          <h2>Drop-in integration with your stack</h2>
+          <p>
+            Connect your autonomy software directly to the simulation engine. No custom middleware: your stack
+            receives sensor feeds and issues commands exactly as it would on hardware.
+          </p>
+        </div>
+        <div class="product-feature-grid product-feature-grid--three">
+          <article>
+            <h3>Real-time throughput</h3>
+            <p>
+              Sustained 20 fps EO sensor output with physics-accurate rendering — no pre-baked frames, no offline
+              processing.
+            </p>
+          </article>
+          <article>
+            <h3>Configurable scenarios</h3>
+            <p>
+              Inject faults, degrade sensors, spawn threats, and sweep environmental conditions programmatically
+              across test runs.
+            </p>
+          </article>
+          <article>
+            <h3>CI/CD ready</h3>
+            <p>
+              Headless deployment with pass/fail metrics. Integrate SITL regression tests directly into your
+              continuous integration pipeline.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="product-content-section">
+        <div class="product-section-heading">
+          <h2>Capabilities</h2>
+          <p>Runtime fidelity and test infrastructure for full autonomy programs.</p>
+        </div>
+        <div class="product-feature-grid product-feature-grid--four">
+          <article>
+            <h3>Physics-accurate EO</h3>
+            <p>Atmospheric haze, sensor noise, motion blur, and lighting variation rendered at runtime.</p>
+          </article>
+          <article>
+            <h3>Multi-domain environments</h3>
+            <p>Maritime, aerial, and ground environments with configurable terrain, weather, and sea state.</p>
+          </article>
+          <article>
+            <h3>Multi-agent simulation</h3>
+            <p>
+              Run multiple autonomous agents within the same scenario — test coordination, deconfliction, and
+              emergent behavior without hardware.
+            </p>
+          </article>
+          <article>
+            <h3>Structured test suites</h3>
+            <p>Pre-built scenario libraries for common program requirements with quantified pass/fail output.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="product-detail-cta">
+        <h2>Validate before hardware</h2>
+        <a class="etched-button" data-demo-link>Request a demo</a>
+      </section>
+    </main>
+
+    <footer data-site-footer></footer>
+  </body>
+</html>
